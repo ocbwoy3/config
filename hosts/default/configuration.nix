@@ -39,6 +39,18 @@
 		xwayland.enable = true;
 	};
 
+	programs.zsh = {
+		enable = true;
+		autosuggestions.enable = true;
+		zsh-autoenv.enable = true;
+		syntaxHighlighting.enable = true;
+		ohMyZsh = {
+			enable = true;
+			plugins = [ "git" "direnv" "thefuck" ];
+			theme = "robbyrussell";
+		};
+	};
+
 	main-user.packages = with pkgs; [
 		prismlauncher
 		vesktop
