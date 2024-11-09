@@ -1,6 +1,9 @@
 # OCbwoy3's Dotfiles
 The second ones, because the first ones were too difficult to install.
 
+**The default password for `ocbwoy3` is `password`!!!**
+**The default git creds should be changed.**
+
 ```bash
 cd ~
 nix-shell -p git --run "git clone https://github.com/ocbwoy3/config"
