@@ -13,7 +13,7 @@
 	};
 
 	# Required by NixOS:
-	# /etc/nixos/hardware-configuration.nix 
+	# ./hardware-configuration.nix 
 
 	# inputs.home-manager.nixosModules.default
 	# catppuccin.nixosModules.catppuccin
@@ -24,8 +24,8 @@
 			specialArgs = {inherit inputs;};
 			modules = [
 				inputs.home-manager.nixosModules.default
-				catppuccin.nixosModules.catppuccin
-				nix-flatpak.nixosModules.nix-flatpak
+				inputs.catppuccin.nixosModules.catppuccin
+				inputs.nix-flatpak.nixosModules.nix-flatpak
 				/etc/nixos/hardware-configuration.nix
 				./hosts/default/configuration.nix
 				

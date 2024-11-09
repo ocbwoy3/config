@@ -2,6 +2,11 @@
 
 {
 
+	services.displayManager.sddm = {
+		enable = true;
+		package = pkgs.kdePackages.sddm;
+	};
+
 	programs.zsh.enable = true;
 
 	programs.direnv = {

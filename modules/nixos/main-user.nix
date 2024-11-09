@@ -29,14 +29,7 @@
 			description = "${config.main-user.realName}";
 			shell = pkgs.zsh;
 			extraGroups = [ "networkmanager" "wheel" "input" ];
-			packages = ${config.main-user.packages};
-			# with pkgs; [
-			# 	brave
-			# 	prismlauncher
-			# 	gimp
-			# 	mpv
-			# 	vesktop
-			# ];
+			packages = config.main-user.packages;
 		};
 	};
 

@@ -7,4 +7,6 @@
 		vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
 	};
 
+	nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
 }

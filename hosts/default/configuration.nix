@@ -12,7 +12,7 @@
 		../../modules/nixos/network.nix
 		../../modules/nixos/programs.nix
 		./packages.nix
-	]
+	];
 
 	programs.steam = {
 		enable = true;
@@ -26,33 +26,60 @@
 		{
 			name = "flathub";
 			location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
-		};
-		{
-			name = "sober";
-			location = "https://sober.vinegarhq.org/repo/"
 		}
 	];
 
+	# Sadly, I don't know how to install flatpaks like this.
 	services.flatpak.packages = [
-		{ appId = "org.vinegarhq.Sober"; origin = "sober";  }
+		# { flatpakref = "https://sober.vinegarhq.org/sober.flatpakref"; sha256 = "0"; }
 	];
 
 	programs.hyprland = {
-		# Install the packages from nixpkgs
 		enable = true;
-		# Whether to enable XWayland
 		xwayland.enable = true;
 	};
 
-	main-user.userName = "ocbwoy3";
-	main-user.realName = "OCbwoy3";
 	main-user.packages = with pkgs; [
-		brave
 		prismlauncher
 		vesktop
 	];
 
-	catppuccin.enable = true;
-	catppuccin.flavor = "mocha";
+	# CHANGE YOUR NAME IN HOME MANAGER!
+
+	main-user.userName = "ocbwoy3";
+	main-user.realName = "OCbwoy3";
+
+	catppuccin = {
+		enable = true;
+		flavor = "mocha";
+		accent = "blue";
+	};
+
+	home-manager.users.ocbwoy3 = {
+
+		programs.chromium = {
+			enable = true;
+			package = pkgs.brave;
+			extensions = [
+				{ id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # uBlock Origin
+				{ id = "enamippconapkdmgfgjchkhakpfinmaj"; } # DeArrow
+				{ id = "clngdbkpkpeebahjckkjfobafhncgmne"; } # Sytlus
+				{ id = "hnmpcagpplmpfojmgmnngilcnanddlhb"; } # Windscribe
+				{ id = "hfjngafpndganmdggnapblamgbfjhnof"; } # RoSeal
+				{ id = "aflpfginfpjhanhkmdpohpggpolfopmb"; } # SkyLink
+				{ id = "agjnjboanicjcpenljmaaigopkgdnihi"; } # PreMiD
+				
+			];
+		};
+
+		programs.git = {
+			enable = true;
+			userName  = "OCbwoy3";
+			userEmail = "ocbwoy3@ocbwoy3.dev";
+		};
+
+		home.stateVersion = "24.11";
+
+	};
 
 }

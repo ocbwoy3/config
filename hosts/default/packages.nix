@@ -18,11 +18,10 @@
 		imagemagick
 		alacritty
 		libimobiledevice
-		catppuccin-sddm
 		vim
 		microsoft-edge
 		direnv
-		gnome.nautilus
+		nautilus
 		kdePackages.dolphin
 		kdePackages.kservice
 		qpwgraph
@@ -83,6 +82,6 @@
 		gobject-introspection 
 		gimp
 		mpv
-	]
-}
+	];
 
+}
