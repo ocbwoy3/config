@@ -8,6 +8,7 @@
 		noto-fonts-emoji
 		monaspace
 		nerdfonts
+		# nerd-fonts.monaspace
 	];
 
 	environment.systemPackages = with pkgs; [

@@ -52,8 +52,12 @@
 	};
 
 	main-user.packages = with pkgs; [
+		warp-terminal
 		prismlauncher
 		vesktop
+		kdenlive
+		libsForQt5.qt5ct
+		libsForQt5.lightly
 	];
 
 	# CHANGE YOUR NAME IN HOME MANAGER!
