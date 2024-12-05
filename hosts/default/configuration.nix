@@ -2,10 +2,6 @@
 
 {
 
-	inputs = {
-		crossover = ./apps/crossover.nix;
-	};
-
 	imports = [
 		../../modules/nixos/nixpkgs.nix
 		../../modules/nixos/bootloader.nix
@@ -64,6 +60,7 @@
 		libsForQt5.lightly
 		kdePackages.qt6ct
 		lightly-qt
+		(pkgs.callPackage ./apps/crossover.nix {})
 	];
 
 	# CHANGE YOUR NAME IN HOME MANAGER!
