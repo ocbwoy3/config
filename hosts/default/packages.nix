@@ -35,6 +35,7 @@
 		(python3.withPackages (subpkgs: with subpkgs; [
 			requests
 			pypresence
+			pygobject3
 		]))
 		wrangler
 		thefuck

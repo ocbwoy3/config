@@ -31,6 +31,7 @@
 
 	# Sadly, I don't know how to install flatpaks like this.
 	services.flatpak.packages = [
+		# "com.usebottles.bottles"
 		# { flatpakref = "https://sober.vinegarhq.org/sober.flatpakref"; sha256 = "0"; }
 	];
 
@@ -60,7 +61,7 @@
 		libsForQt5.lightly
 		kdePackages.qt6ct
 		lightly-qt
-		(pkgs.callPackage ./apps/crossover.nix {})
+		# (pkgs.callPackage ./apps/crossover.nix {})
 	];
 
 	# CHANGE YOUR NAME IN HOME MANAGER!
