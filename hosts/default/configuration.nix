@@ -2,6 +2,10 @@
 
 {
 
+	inputs = {
+		crossover = ./apps/crossover.nix;
+	};
+
 	imports = [
 		../../modules/nixos/nixpkgs.nix
 		../../modules/nixos/bootloader.nix
@@ -12,7 +16,6 @@
 		../../modules/nixos/network.nix
 		../../modules/nixos/programs.nix
 		./packages.nix
-		./apps/crossover.nix
 	];
 
 	programs.steam = {
