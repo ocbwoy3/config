@@ -12,6 +12,7 @@
 		../../modules/nixos/network.nix
 		../../modules/nixos/programs.nix
 		./packages.nix
+		./apps/crossover.nix
 	];
 
 	programs.steam = {
@@ -58,6 +59,8 @@
 		kdenlive
 		libsForQt5.qt5ct
 		libsForQt5.lightly
+		kdePackages.qt6ct
+		lightly-qt
 	];
 
 	# CHANGE YOUR NAME IN HOME MANAGER!
