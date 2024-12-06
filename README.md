@@ -3,7 +3,7 @@
 **Default values you should change. There is no point hiding them as you'll find them in the code anyway:**
 
 - User: `ocbwoy3`
-- Password: `password'
+- Password: `password`
 - Git creds: `OCbwoy3 <ocbwoy3@ocbwoy3.dev>`
 
 **Prerequisites:**
