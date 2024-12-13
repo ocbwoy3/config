@@ -20,7 +20,6 @@
 		alacritty
 		libimobiledevice
 		vim
-		microsoft-edge
 		direnv
 		nautilus
 		kdePackages.dolphin
@@ -32,6 +31,7 @@
 		vscode
 		nodejs
 		bun
+		yarn
 		(python3.withPackages (subpkgs: with subpkgs; [
 			requests
 			pypresence
