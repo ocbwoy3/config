@@ -29,6 +29,10 @@
 		}
 	];
 
+	services.printing = {
+		enable = true;
+	};
+
 	# Sadly, I don't know how to install flatpaks like this.
 	services.flatpak.packages = [
 		# "com.usebottles.bottles"
@@ -50,7 +54,13 @@
 			plugins = [ "git" "direnv" "thefuck" ];
 			theme = "robbyrussell";
 		};
+		shellAliases = {
+			nixos_rebuild = "sudo nixos-rebuild switch --flake .#default --impure --cores 4";
+			neofetch = "hyfetch";
+		};
 	};
+
+	virtualisation.docker.enable = true;
 
 	main-user.packages = with pkgs; [
 		warp-terminal
@@ -61,7 +71,8 @@
 		libsForQt5.lightly
 		kdePackages.qt6ct
 		lightly-qt
-		# (pkgs.callPackage ./apps/crossover.nix {})
+		hyfetch
+		(pkgs.callPackage ./apps/tuxstrap.nix {})
 	];
 
 	# CHANGE YOUR NAME IN HOME MANAGER!
