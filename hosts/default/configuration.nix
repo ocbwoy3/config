@@ -72,7 +72,7 @@
 		kdePackages.qt6ct
 		lightly-qt
 		hyfetch
-		(pkgs.callPackage ./apps/tuxstrap.nix {})
+		# (pkgs.callPackage ./apps/tuxstrap.nix {})
 	];
 
 	# CHANGE YOUR NAME IN HOME MANAGER!
