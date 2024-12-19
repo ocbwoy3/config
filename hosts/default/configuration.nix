@@ -101,7 +101,7 @@
 				{ id = "hfjngafpndganmdggnapblamgbfjhnof"; } # RoSeal
 				{ id = "aflpfginfpjhanhkmdpohpggpolfopmb"; } # SkyLink
 				{ id = "agjnjboanicjcpenljmaaigopkgdnihi"; } # PreMiD
-				
+				{ id = "ijcpiojgefnkmcadacmacogglhjdjphj"; } # Shinigami Eyes		
 			];
 		};
 
