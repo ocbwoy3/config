@@ -7,12 +7,14 @@
 		noto-fonts-cjk-sans
 		noto-fonts-emoji
 		monaspace
-		nerdfonts
-		# nerd-fonts.monaspace
+		# nerdfonts
+		nerd-fonts.monaspace
 	];
 
 	environment.systemPackages = with pkgs; [
 		nix-direnv
+		nixpkgs-fmt
+		nixd
 		unzip
 		ifuse
 		w3m
