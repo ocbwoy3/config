@@ -67,7 +67,8 @@
 	main-user.packages = with pkgs; [
 		warp-terminal
 		prismlauncher
-		vesktop
+		# vesktop
+		legcord
 		kdenlive
 		libsForQt5.qt5ct
 		libsForQt5.lightly
@@ -76,6 +77,21 @@
 		hyfetch
 		# (pkgs.callPackage ./apps/tuxstrap.nix {})
 	];
+
+	fileSystems = {
+		"/".options = [ "compress=zstd" ];
+		"/home".options = [ "compress=zstd" ];
+		"/nix".options = [ "compress=zstd" "noatime" ];
+		"/swap".options = [ "noatime "];
+	};
+
+	swapDevices = [ { device = "/swap/swapfile"; } ];
+
+	services.btrfs.autoScrub = {
+		enable = true;
+		interval = "monthly";
+		fileSystems = [ "/" ];
+	};
 
 	# CHANGE YOUR NAME IN HOME MANAGER!
 
