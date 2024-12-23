@@ -28,7 +28,7 @@
 			initialPassword = "password";
 			description = "${config.main-user.realName}";
 			shell = pkgs.zsh;
-			extraGroups = [ "networkmanager" "wheel" "input" ];
+			extraGroups = [ "networkmanager" "wheel" "input" "video" ];
 			packages = config.main-user.packages;
 		};
 	};

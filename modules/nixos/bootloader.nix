@@ -22,6 +22,7 @@
 			device = "nodev";
 			# efiInstallAsRemovable = true;
 			useOSProber = true;
+			gfxmodeEfi = "1920x1080";
 		};
 	};
 

@@ -15,7 +15,9 @@
 		nix-direnv
 		nixpkgs-fmt
 		nixd
+		catppuccin-cursors.mochaBlue
 		unzip
+		libwebp
 		ifuse
 		w3m
 		imagemagick
