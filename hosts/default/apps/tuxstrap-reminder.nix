@@ -6,7 +6,7 @@ pkgs.stdenv.mkDerivation {
 		owner = "ocbwoy3";
 		repo = "tuxstrap";
 		rev = "v1.2.0";
-		sha256 = "0000000000000000000000000000000000000000000000000000"; # Replace with the actual sha256
+		sha256 = "sha256-YZ+GD9hs8PAf45kFklrR3j1hUWovKWllr2iQuh3gRms="; # Replace with the actual sha256
 	};
 
 	buildInputs = [ pkgs.bun ];
