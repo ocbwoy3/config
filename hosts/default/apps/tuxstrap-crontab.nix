@@ -6,20 +6,18 @@ pkgs.stdenv.mkDerivation {
 
 	unpackPhase = ''
 		mkdir -p $out
-		cp $src tuxstrap-crontab.bin
+	'';
+
+	buildPhase = ''
+		mkdir -p $out
+		mkdir -p $out/lib
+		cp $src $out/lib/crontab-executable.ts
 	'';
 
 	installPhase = ''
 		mkdir -p $out/bin
-		mkdir -p $out/lib
-		echo '${"#"}!/bin/bash' > $out/bin/tuxstrap-crontab
-        echo '${pkgs.bun}/bin/bun run $out/lib/crontab-executable.ts' >> $out/bin/tuxstrap-crontab
-        chmod +x $out/bin/tuxstrap-crontab
-		
-		mv crontab-executable $out/lib/
+		echo "#!/bin/bash" > $out/bin/tuxstrap-crontab
+		echo '${pkgs.bun}/bin/bun run $(dirname "$(realpath "$0")")/../lib/crontab-executable.ts' >> $out/bin/tuxstrap-crontab
+		chmod +x $out/bin/tuxstrap-crontab
 	'';
-
-	meta = with nixpkgs.lib; {
-        description = "tuxstrap crontab executable";
-	};
 }
