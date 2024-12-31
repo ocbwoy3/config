@@ -36,7 +36,7 @@ function sendSpamNotifications() {
 
 function writeState(floorsSurvived: number) {
 	const state = {
-		date: new Date().toISOString().split("T")[0],
+		date: new Date().toLocaleString("en-CA", { timeZoneName: "short" }).split(",")[0],
 		floors: floorsSurvived,
 	};
 	fs.writeFileSync(stateFilePath, JSON.stringify(state, null, 2));
@@ -45,7 +45,7 @@ function writeState(floorsSurvived: number) {
 function checkChallengeState() {
 	if (fs.existsSync(stateFilePath)) {
 		const state = JSON.parse(fs.readFileSync(stateFilePath, "utf-8"));
-		const today = new Date().toISOString().split("T")[0];
+		const today = new Date().toLocaleString("en-CA", { timeZoneName: "short" }).split(",")[0];
 		const stateDate = state.date;
 		const floorsSurvived = state.floors;
 
@@ -65,11 +65,11 @@ function checkChallengeState() {
 			}
 		} else {
 			sendReminderNotification();
-			writeState(0); // Write state with 0 floors if the user hasn't played today
+			writeState(0);
 		}
 	} else {
 		sendReminderNotification();
-		writeState(0); // Write state with 0 floors if no state file exists
+		writeState(0);
 	}
 }
 
