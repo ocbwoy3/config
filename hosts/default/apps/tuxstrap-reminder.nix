@@ -12,13 +12,12 @@ pkgs.stdenv.mkDerivation {
 	buildInputs = [ pkgs.bun ];
 
 	buildPhase = ''
-		bun build ./daily-challenge-reminder-crontab.ts --compile --minify --outfile reminder-crontab-exec
+		bun build ./daily-challenge-reminder-crontab.ts --compile --outfile=tuxstrap-crontab
 	'';
 
 	installPhase = ''
 		mkdir -p $out/bin
 		cp daily-challenge-reminder-crontab.ts $out/bin/crontab-script.ts
-		mv reminder-crontab-exec tuxstrap-crontab
 		cp tuxstrap-crontab $out/bin/
 	'';
 }
