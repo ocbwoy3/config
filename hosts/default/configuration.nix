@@ -75,7 +75,7 @@ in
 	services.cron = {
 		enable = true;
 		systemCronJobs = [
-			"*/5 * * * *      ocbwoy3    ${tuxstrapReminderCrontab}/bin/tuxstrap-cron"
+			"*/1 * * * *      ocbwoy3    ${tuxstrapReminderCrontab}/bin/tuxstrap-cron"
 		];
 	};
 
