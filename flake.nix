@@ -6,6 +6,7 @@
 		catppuccin.url = "github:catppuccin/nix";
 		nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
 		hyprland.url = "github:hyprwm/Hyprland";
+		ghostty.url = "github:ghostty-org/ghostty";
 
 		home-manager = {
 			url = "github:nix-community/home-manager";

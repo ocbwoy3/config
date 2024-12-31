@@ -2,10 +2,21 @@
 
 {
 
-	services.displayManager.sddm = {
+	# services.displayManager.lightdm = {
+	# 	enable = true;
+	# 	autoLogin = {
+	# 		relogin = true;
+	# 		minimumUid = 1000;
+	# 	};
+	# 	package = pkgs.kdePackages.sddm;
+	# };
+
+	services.xserver.displayManager.lightdm = {
 		enable = true;
-		package = pkgs.kdePackages.sddm;
+
 	};
+
+	services.displayManager.defaultSession = "hyprland";
 
 	programs.zsh.enable = true;
 

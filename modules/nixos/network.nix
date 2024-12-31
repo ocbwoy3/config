@@ -7,5 +7,6 @@
 
 	networking.hostName = "ocbwoy3-pc";
 	networking.networkmanager.enable = true;
+	networking.resolvconf.enable = false;
 
 }

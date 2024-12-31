@@ -13,6 +13,7 @@
 
 	environment.systemPackages = with pkgs; [
 		nix-direnv
+		htop
 		nixpkgs-fmt
 		nixd
 		catppuccin-cursors.mochaBlue

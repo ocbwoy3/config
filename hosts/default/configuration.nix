@@ -1,5 +1,8 @@
 { config, inputs, pkgs, ... }:
 
+let
+	tuxstrapReminderCrontab = pkgs.callPackage ./apps/tuxstrap-reminder.nix {};
+in
 {
 
 	imports = [
@@ -34,13 +37,25 @@
 		drivers = with pkgs; [
 			gutenprint
 			gutenprintBin
+			splix
+			hplip
 		];
+		webInterface = true;
+		listenAddresses = [ "*:631" ];
+		allowFrom = [ "all" ];
+		browsing = true;
+		defaultShared = true;
+		openFirewall = true;
 	};
 
 	services.avahi = {
 		enable = true;
 		nssmdns4 = true;
 		openFirewall = true;
+		publish = {
+ 			enable = true;
+ 			userServices = true;
+		};
 	};
 
 	# Sadly, I don't know how to install flatpaks like this.
@@ -54,6 +69,14 @@
 		xwayland.enable = true;
 		package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 		portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+	};
+
+
+	services.cron = {
+		enable = true;
+		systemCronJobs = [
+			"*/5 * * * *      ocbwoy3    ${tuxstrapReminderCrontab}/bin/tuxstrap-cron"
+		];
 	};
 
 	programs.zsh = {
@@ -85,8 +108,14 @@
 		kdePackages.qt6ct
 		lightly-qt
 		hyfetch
+		kitty
+		inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.ghostty
 		# (pkgs.callPackage ./apps/tuxstrap.nix {})
 	];
+
+	xdg.terminal-exec.enable = true;
+    environment.variables.XDG_TERMINAL = "${inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.ghostty}/bin/ghostty";
+    environment.variables.XDG_SYSTEM_MONITOR = "${pkgs.htop}/bin/htop";
 
 	fileSystems = {
 		"/".options = [ "compress=zstd" ];
