@@ -1,8 +1,5 @@
 { config, inputs, pkgs, ... }:
 
-let
-	tuxstrapReminderCrontab = pkgs.callPackage ./apps/tuxstrap-reminder.nix {};
-in
 {
 
 	imports = [
@@ -71,14 +68,6 @@ in
 		portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 	};
 
-
-	services.cron = {
-		enable = true;
-		systemCronJobs = [
-			"*/1 * * * *      ocbwoy3    bun run ${tuxstrapReminderCrontab}/bin/crontab-script.ts"
-		];
-	};
-
 	programs.zsh = {
 		enable = true;
 		autosuggestions.enable = true;
@@ -110,7 +99,7 @@ in
 		hyfetch
 		kitty
 		inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.ghostty
-		# (pkgs.callPackage ./apps/tuxstrap.nix {})
+		(callPackage ./apps/tuxstrap-crontab.nix {})
 	];
 
 	xdg.terminal-exec.enable = true;
