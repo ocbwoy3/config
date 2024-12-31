@@ -2,22 +2,24 @@
 
 pkgs.stdenv.mkDerivation {
 	name = "tuxstrap-cron-executable";
-	src = pkgs.fetchFromGitHub {
-		owner = "ocbwoy3";
-		repo = "tuxstrap";
-		rev = "v1.2.0";
-		sha256 = "sha256-YZ+GD9hs8PAf45kFklrR3j1hUWovKWllr2iQuh3gRms="; # Replace with the actual sha256
-	};
+	src = ./files/crontab-executable.ts;
 
-	buildInputs = [ pkgs.bun ];
-
-	buildPhase = ''
-		bun build ./daily-challenge-reminder-crontab.ts --compile --outfile=tuxstrap-crontab
+	unpackPhase = ''
+		mkdir -p $out
+		cp $src tuxstrap-crontab.bin
 	'';
 
 	installPhase = ''
 		mkdir -p $out/bin
-		# cp daily-challenge-reminder-crontab.ts $out/bin/crontab-script.ts
-		cp tuxstrap-crontab $out/bin/
+		mkdir -p $out/lib
+		echo '${"#"}!/bin/bash' > $out/bin/tuxstrap-crontab
+        echo '${pkgs.bun}/bin/bun run $out/lib/crontab-executable.ts' >> $out/bin/tuxstrap-crontab
+        chmod +x $out/bin/tuxstrap-crontab
+		
+		mv crontab-executable $out/lib/
 	'';
+
+	meta = with nixpkgs.lib; {
+        description = "tuxstrap crontab executable";
+	};
 }
