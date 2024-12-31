@@ -17,7 +17,7 @@ pkgs.stdenv.mkDerivation {
 
 	installPhase = ''
 		mkdir -p $out/bin
-		cp daily-challenge-reminder-crontab.ts $out/bin/crontab-script
+		cp daily-challenge-reminder-crontab.ts $out/bin/crontab-script.ts
 		mv reminder-crontab-exec tuxstrap-crontab
 		cp tuxstrap-crontab $out/bin/
 	'';
