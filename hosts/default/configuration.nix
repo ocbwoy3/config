@@ -12,6 +12,7 @@
 		../../modules/nixos/network.nix
 		../../modules/nixos/programs.nix
 		./packages.nix
+		./other/distro.nix
 	];
 
 	programs.steam = {
