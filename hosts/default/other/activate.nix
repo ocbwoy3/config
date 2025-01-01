@@ -4,7 +4,7 @@
 
 	system.activationScripts.installRoblox = {
 		text = ''
-			flatpak install https://sober.vinegarhq.org/sober.flatpakref
+			${pkgs.flatpak}/bin/flatpak install https://sober.vinegarhq.org/sober.flatpakref
 		'';
 	};
 
