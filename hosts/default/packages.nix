@@ -12,6 +12,9 @@
 	];
 
 	environment.systemPackages = with pkgs; [
+		xorg.xkeyboard_config
+		libxkbcommon
+		libxkbcommon-x11
 		nix-direnv
 		htop
 		nixpkgs-fmt
