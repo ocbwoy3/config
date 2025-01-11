@@ -508,14 +508,14 @@
       "locked": {
         "lastModified": 1736593231,
         "narHash": "sha256-WVSMaMoLcVqBjLviw3M19Fu+za/jKDrO8p2GeMWlcCc=",
-        "owner": "Jas-SinghFSU",
-        "repo": "HyprPanel",
+        "owner": "jas-singhfsu",
+        "repo": "hyprpanel",
         "rev": "db3fa88d18452d87370103af82aec424515c1d3e",
         "type": "github"
       },
       "original": {
-        "owner": "Jas-SinghFSU",
-        "repo": "HyprPanel",
+        "owner": "jas-singhfsu",
+        "repo": "hyprpanel",
         "type": "github"
       }
     },

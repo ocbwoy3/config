@@ -8,10 +8,9 @@
 		hyprland.url = "github:hyprwm/Hyprland";
 		hyprsysteminfo.url = "github:hyprwm/hyprsysteminfo";
 		ghostty.url = "github:ghostty-org/ghostty";
-		hyprpanel = {
-			url = "github:Jas-SinghFSU/HyprPanel";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
+		
+		hyprpanel.url = "github:jas-singhfsu/hyprpanel";
+		hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
 
 		home-manager = {
 			url = "github:nix-community/home-manager";
@@ -28,8 +27,14 @@
 
 	outputs = { self, nixpkgs, ... }@inputs: {
 		nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-			specialArgs = {inherit inputs;};
+			specialArgs = {
+				inherit system;
+				inherit inputs;
+			};
 			modules = [
+				{
+					nixpkgs.overlays = [inputs.hyprpanel.overlay];
+				}
 				inputs.home-manager.nixosModules.default
 				inputs.catppuccin.nixosModules.catppuccin
 				inputs.nix-flatpak.nixosModules.nix-flatpak
