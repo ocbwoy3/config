@@ -54,6 +54,7 @@ function checkChallengeState() {
 
 		if (stateDate === today) {
 			if (floorsSurvived < 25) {
+				/*
 				if (floorsSurvived === 0) {
 					sendReminderNotification();
 				} else {
@@ -62,6 +63,8 @@ function checkChallengeState() {
 				if (hoursLeft <= 4) {
 					sendSpamNotifications();
 				}
+			       */
+			      sendReminderNotification();
 			}
 		} else {
 			sendReminderNotification();

@@ -12,7 +12,9 @@
 		../../modules/nixos/network.nix
 		../../modules/nixos/programs.nix
 		./packages.nix
+		../../modules/home-manager/hyprpanel.nix
 		./other/activate.nix
+		
 	];
 
 	programs.steam = {
@@ -91,7 +93,8 @@
 		warp-terminal
 		prismlauncher
 		# vesktop
-		legcord
+		# legcord
+		equibop
 		kdenlive
 		libsForQt5.qt5ct
 		libsForQt5.lightly

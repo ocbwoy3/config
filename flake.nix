@@ -6,8 +6,10 @@
 		catppuccin.url = "github:catppuccin/nix";
 		nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
 		hyprland.url = "github:hyprwm/Hyprland";
+		hyprsysteminfo.url = "github:hyprwm/hyprsysteminfo";
 		ghostty.url = "github:ghostty-org/ghostty";
-
+		hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+		
 		home-manager = {
 			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";

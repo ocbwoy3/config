@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
 
@@ -7,14 +7,20 @@
 		noto-fonts-cjk-sans
 		noto-fonts-emoji
 		monaspace
+		geist-font
 		# nerdfonts
+		nerd-fonts.geist-mono
 		nerd-fonts.monaspace
+		nerd-fonts.symbols-only
 	];
 
+	programs.seahorse.enable = true;
+
 	environment.systemPackages = with pkgs; [
-		xorg.xkeyboard_config
+		inputs.hyprsysteminfo.packages.${pkgs.stdenv.hostPlatform.system}.hyprsysteminfo
+		hyprpanel
 		libxkbcommon
-		libxkbcommon-x11
+		gnupg
 		nix-direnv
 		htop
 		nixpkgs-fmt
@@ -35,7 +41,7 @@
 		qpwgraph
 		wget
 		git
-		neofetch
+		fastfetch
 		vscode
 		nodejs
 		bun

@@ -13,6 +13,17 @@
 
 	boot.supportedFilesystems = [ "ntfs" ];
 
+	boot.plymouth = {
+		enable = true;
+	};
+
+	boot.initrd.verbose = false;
+	boot.kernelParams = [
+		# "quiet"
+		"splash"
+		"boot.shell_on_fail"
+	];
+
 	boot.loader = {
 		efi = {
 			canTouchEfiVariables = true;
