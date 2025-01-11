@@ -32,7 +32,6 @@
 				inputs.nix-flatpak.nixosModules.nix-flatpak
 				/etc/nixos/hardware-configuration.nix
 				./hosts/default/configuration.nix
-				
 			];
 		};
 	};
