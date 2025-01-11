@@ -8,7 +8,10 @@
 		hyprland.url = "github:hyprwm/Hyprland";
 		hyprsysteminfo.url = "github:hyprwm/hyprsysteminfo";
 		ghostty.url = "github:ghostty-org/ghostty";
-		hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+		hyprpanel = {
+			url = "github:Jas-SinghFSU/HyprPanel";
+			inputs.nixpkgs.follows = "nixpkgs";
+		}
 		
 		home-manager = {
 			url = "github:nix-community/home-manager";
