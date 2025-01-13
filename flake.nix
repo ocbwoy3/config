@@ -28,7 +28,6 @@
 	outputs = { self, nixpkgs, ... }@inputs: {
 		nixosConfigurations.default = nixpkgs.lib.nixosSystem {
 			specialArgs = {
-				inherit system;
 				inherit inputs;
 			};
 			modules = [

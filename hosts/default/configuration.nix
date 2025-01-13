@@ -12,7 +12,7 @@
 		../../modules/nixos/network.nix
 		../../modules/nixos/programs.nix
 		./packages.nix
-		../../modules/home-manager/hyprpanel.nix
+		# ../../modules/home-manager/hyprpanel.nix
 		./other/activate.nix
 		
 	];
