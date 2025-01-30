@@ -11,9 +11,9 @@
 	# 	package = pkgs.kdePackages.sddm;
 	# };
 
-	services.xserver.displayManager.lightdm = {
+	services.displayManager.autoLogin = {
 		enable = true;
-
+		user = "ocbwoy3";
 	};
 
 	services.displayManager.defaultSession = "hyprland";
@@ -39,6 +39,17 @@
 	services.openssh = {
 		enable = true;
 		banner = "What the fuck do you think you're doing here?\n";
+	};
+
+	services.dbus.packages = [ pkgs.gcr ];
+
+	services.pcscd.enable = true;
+	programs.gnupg = {
+		# enable = true;
+		agent = {
+			enable = true;
+			pinentryPackage = pkgs.pinentry-gnome3;
+		};
 	};
 
 }

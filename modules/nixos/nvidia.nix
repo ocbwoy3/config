@@ -11,6 +11,9 @@
 		NVD_BACKEND = "direct";
 		EGL_PLATFORM = "wayland";
 		VDPAU_DRIVER = "va_gl";
+		WAYLAND_DISPLAY = "wayland-1";
+		DISPLAY = ":0";
+		XDG_CURRENT_DESKTOP = "Hyprland";
 	};
 
 	environment.sessionVariables = {
@@ -51,7 +54,7 @@
 		# 	intelBusId = "PCI:0:2:0";
 		# 	nvidiaBusId = "PCI:1:0:0";
 		# };
-		package = config.boot.kernelPackages.nvidiaPackages.latest;
+		package = config.boot.kernelPackages.nvidiaPackages.stable;
 	};
 
 	services.xserver.enable = true;

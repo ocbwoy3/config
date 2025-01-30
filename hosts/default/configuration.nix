@@ -104,17 +104,25 @@
 		kitty
 		inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.ghostty
 		(callPackage ./apps/tuxstrap-crontab.nix {})
+		(callPackage ./apps/wl-shimeji.nix {})
 	];
 
 	xdg.terminal-exec.enable = true;
-    environment.variables.XDG_TERMINAL = "${inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.ghostty}/bin/ghostty";
+    xdg.portal = {
+		enable = true;
+		extraPortals = [
+			pkgs.xdg-desktop-portal-gnome
+			pkgs.xdg-desktop-portal-gtk
+		];
+	};
+	environment.variables.XDG_TERMINAL = "${inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.ghostty}/bin/ghostty";
     environment.variables.XDG_SYSTEM_MONITOR = "${pkgs.htop}/bin/htop";
 
 	fileSystems = {
 		"/".options = [ "compress=zstd" ];
 		"/home".options = [ "compress=zstd" ];
 		"/nix".options = [ "compress=zstd" "noatime" ];
-		"/swap".options = [ "noatime "];
+		"/swap".options = [ "noatime" ];
 	};
 
 	swapDevices = [ { device = "/swap/swapfile"; } ];
@@ -130,13 +138,21 @@
 	main-user.userName = "ocbwoy3";
 	main-user.realName = "OCbwoy3";
 
+	programs.dconf.enable = true;
+	services.gvfs.enable = true;
+
 	catppuccin = {
 		enable = true;
 		flavor = "mocha";
 		accent = "blue";
+		# gtk.enable = true;
 	};
 
+	# home-manager.services.mpris-proxy.enable = true;
+
 	home-manager.users.ocbwoy3 = {
+
+		services.mpris-proxy.enable = true;
 
 		programs.chromium = {
 			enable = true;
