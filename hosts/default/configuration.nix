@@ -31,6 +31,12 @@
 			location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
 		}
 	];
+	services.flatpak.packages = [
+		{
+			appId = "com.modrinth.ModrinthApp";
+			origin = "flathub";
+		}
+	];
 
 	services.printing = {
 		enable = true;
@@ -59,10 +65,10 @@
 	};
 
 	# Sadly, I don't know how to install flatpaks like this.
-	services.flatpak.packages = [
+	# services.flatpak.packages = [
 		# "com.usebottles.bottles"
 		# { flatpakref = "https://sober.vinegarhq.org/sober.flatpakref"; sha256 = "0"; }
-	];
+	# ];
 
 	programs.hyprland = {
 		enable = true;

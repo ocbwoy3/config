@@ -1,17 +1,17 @@
-{ lib, stdenv, fetchFromGitHub, pkg-config, wayland, waylandProtocols, wlrProtocols, libspng }:
+{ lib, stdenv, fetchgit, pkg-config, wayland, wayland-protocols, wlr-protocols, wayland-scanner, libspng }:
 
 stdenv.mkDerivation rec {
   pname = "wl_shimeji";
   version = "1.0.0"; # Change to the appropriate version
 
-  src = fetchFromGitHub {
-    owner = "CluelessCatBurger";
-    repo = "wl_shimeji";
+  src = fetchgit {
+    url = "https://github.com/CluelessCatBurger/wl_shimeji.git";
     rev = "392a83d5658f283ace77b0c839d5a201cebc8784"; # Change to the appropriate commit
-    sha256 = "sha256-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX="; # Put the correct sha256 hash
+    sha256 = "sha256-T7sWuKOsc0vEfkcGbRXLHit24db97crEhYadOMq4MDM="; # Put the correct sha256 hash
+	fetchSubmodules = true;
   };
 
-  nativeBuildInputs = [ pkg-config wayland waylandProtocols wlrProtocols libspng ];
+  nativeBuildInputs = [ pkg-config wayland wayland-protocols wlr-protocols libspng wayland-scanner ];
 
   buildInputs = [ ];
 
