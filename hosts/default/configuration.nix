@@ -14,7 +14,7 @@
 		./packages.nix
 		# ../../modules/home-manager/hyprpanel.nix
 		./other/activate.nix
-		
+		# ./apps/ancs.nix		
 	];
 
 	programs.steam = {
@@ -23,6 +23,8 @@
 		dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
 		localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
 	};
+
+	# services.ancs.enable = true;
 
 	services.flatpak.enable = true;
 	services.flatpak.remotes = [
@@ -53,6 +55,22 @@
 		defaultShared = true;
 		openFirewall = true;
 	};
+
+	programs.virt-manager.enable = true;
+	# user.groups.libvirtd.members = [ "ocbwoy3" ];
+	virtualisation.libvirtd.enable = true;
+	# virtualisation.waydroid.enable = true;
+	virtualisation.spiceUSBRedirection.enable = true;
+
+	# fuck xitter
+	networking.extraHosts = ''
+		0.0.0.0 platform.twitter.com
+		0.0.0.0 api.twitter.com
+		0.0.0.0 twitter.com
+		0.0.0.0 platform.x.com
+		0.0.0.0 api.x.com
+		0.0.0.0 x.com
+	'';
 
 	services.avahi = {
 		enable = true;

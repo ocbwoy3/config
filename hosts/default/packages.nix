@@ -19,6 +19,14 @@
 	environment.systemPackages = with pkgs; [
 		inputs.hyprsysteminfo.packages.${pkgs.stdenv.hostPlatform.system}.hyprsysteminfo
 		hyprpanel
+		# minecraft
+		qemu
+		(writeShellScriptBin "qemu-system-x86_64-uefi" ''
+			qemu-system-x86_64 \
+				-bios ${OVMF.fd}/FV/OVMF.fd \
+				"$@"
+		'')
+		(writeShellScriptBin "regretevator" ''xdg-open roblox://placeId=4972273297'')
 		libxkbcommon
 		gnupg
 		nix-direnv
