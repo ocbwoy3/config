@@ -70,7 +70,13 @@
 		0.0.0.0 platform.x.com
 		0.0.0.0 api.x.com
 		0.0.0.0 x.com
-		0.0.0.0 api.essential.gg # https://www.youtube.com/watch?v=Vb5jJW5pOTg
+		
+		# block essential mod (https://www.youtube.com/watch?v=Vb5jJW5pOTg)
+		0.0.0.0 api.essential.gg
+		0.0.0.0 connect.essential.gg
+		0.0.0.0 *.essential.gg
+		0.0.0.0 *.modcore.dev
+		0.0.0.0 *.sparkuniverse.com
 	'';
 
 	services.avahi = {
