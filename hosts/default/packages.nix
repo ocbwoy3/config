@@ -26,8 +26,9 @@
 				-bios ${OVMF.fd}/FV/OVMF.fd \
 				"$@"
 		'')
-		(writeShellScriptBin "regretevator" ''xdg-open roblox://placeId=4972273297'')
+		(writeShellScriptBin "regretevator" ''xdg-open https://www.roblox.com/games/4972273297/Regretevator-ELEVATOR-SIMULATOR'')
 		libxkbcommon
+		ffmpeg
 		gnupg
 		nix-direnv
 		htop
@@ -59,7 +60,7 @@
 			pypresence
 			pygobject3
 		]))
-		wrangler
+		# wrangler
 		thefuck
 		fontforge
 		xclip
@@ -79,7 +80,7 @@
 		pywal
 		pavucontrol
 		polkit
-		polkit-kde-agent
+		libsForQt5.polkit-kde-agent
 		wlogout
 		libnotify
 		killall

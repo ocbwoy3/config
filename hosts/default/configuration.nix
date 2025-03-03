@@ -106,8 +106,8 @@
 			theme = "robbyrussell";
 		};
 		shellAliases = {
-			nixos_rebuild = "sudo nixos-rebuild switch --flake .#default --impure --cores 4";
-			neofetch = "hyfetch";
+			nixos_rebuild = "sudo nixos-rebuild switch --flake .#default --impure --cores 4 -L --upgrade";
+			neofetch = "fastfetch";
 		};
 	};
 
@@ -119,7 +119,7 @@
 		# vesktop
 		# legcord
 		equibop
-		kdenlive
+		libsForQt5.kdenlive
 		libsForQt5.qt5ct
 		libsForQt5.lightly
 		kdePackages.qt6ct
