@@ -70,6 +70,7 @@
 		0.0.0.0 platform.x.com
 		0.0.0.0 api.x.com
 		0.0.0.0 x.com
+		0.0.0.0 api.essential.gg # https://www.youtube.com/watch?v=Vb5jJW5pOTg
 	'';
 
 	services.avahi = {
