@@ -2,7 +2,10 @@
 
 {
 
-	boot.extraModprobeConfig = ''options nvidia_drm modeset=1 fbdev=1'';
+	# options nvidia NVreg_PreserveVideoMemoryAllocations=1
+	boot.extraModprobeConfig = ''
+		options nvidia_drm modeset=1 fbdev=1
+	'';
 
 	environment.variables = {
 		LIBVA_DRIVER_NAME = "nvidia";

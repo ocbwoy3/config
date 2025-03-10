@@ -62,8 +62,8 @@
 	# virtualisation.waydroid.enable = true;
 	virtualisation.spiceUSBRedirection.enable = true;
 
-	# fuck xitter
 	networking.extraHosts = ''
+		# Block Twitter (self-explanatory)
 		0.0.0.0 platform.twitter.com
 		0.0.0.0 api.twitter.com
 		0.0.0.0 twitter.com
@@ -71,13 +71,15 @@
 		0.0.0.0 api.x.com
 		0.0.0.0 x.com
 		
-		# block essential mod (https://www.youtube.com/watch?v=Vb5jJW5pOTg)
+		# Block Essential Mod (shady practices)
 		0.0.0.0 api.essential.gg
 		0.0.0.0 connect.essential.gg
 		0.0.0.0 *.essential.gg
 		0.0.0.0 *.modcore.dev
 		0.0.0.0 *.sparkuniverse.com
 	'';
+
+	powerManagement.enable = true;
 
 	services.avahi = {
 		enable = true;
@@ -113,7 +115,7 @@
 			theme = "robbyrussell";
 		};
 		shellAliases = {
-			nixos_rebuild = "sudo nixos-rebuild switch --flake .#default --impure --cores 4 -L --upgrade";
+			nixrebuild = "sudo nixos-rebuild switch --flake .#default --impure --cores 4 -L --upgrade";
 			neofetch = "fastfetch";
 		};
 	};

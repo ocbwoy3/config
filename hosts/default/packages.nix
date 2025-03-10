@@ -64,6 +64,7 @@
 		thefuck
 		fontforge
 		xclip
+		gamescope
 		fontforge-gtk
 		deno
 		wofi
@@ -107,6 +108,7 @@
 		gobject-introspection 
 		gimp
 		mpv
+		nixfmt-rfc-style
 	];
 
 }
