@@ -34,6 +34,7 @@
 				inputs.home-manager.nixosModules.default
 				inputs.catppuccin.nixosModules.catppuccin
 				inputs.nix-flatpak.nixosModules.nix-flatpak
+				inputs.disko.nixosModules.disko
 				./hosts/default/hardware-configuration.nix
 				./hosts/default/configuration.nix
 			];
