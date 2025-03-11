@@ -40,5 +40,14 @@
 				./hosts/default/disko.nix
 			];
 		};
+		nixosConfigurations.fix_nixpkgs = nixpkgs.lib.nixosSystem {
+			specialArgs = {
+				inherit inputs;
+			};
+			modules = [
+				./modules/nixos/nixpkgs.nix
+				/etc/nixos/configuration.nix
+			];
+		};
 	};
 }
