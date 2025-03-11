@@ -36,6 +36,7 @@
 		nixpkgs-fmt
 		nixd
 		catppuccin-cursors.mochaBlue
+		kitty
 		unzip
 		libwebp
 		ifuse
