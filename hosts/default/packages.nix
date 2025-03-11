@@ -16,9 +16,10 @@
 
 	programs.seahorse.enable = true;
 
+	environment.variables.LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+
 	environment.systemPackages = with pkgs; [
 		inputs.hyprsysteminfo.packages.${pkgs.stdenv.hostPlatform.system}.hyprsysteminfo
-		hyprpanel
 		# minecraft
 		qemu
 		(writeShellScriptBin "qemu-system-x86_64-uefi" ''
@@ -26,7 +27,7 @@
 				-bios ${OVMF.fd}/FV/OVMF.fd \
 				"$@"
 		'')
-		(writeShellScriptBin "regretevator" ''xdg-open https://www.roblox.com/games/4972273297/Regretevator-ELEVATOR-SIMULATOR'')
+		(writeShellScriptBin "regretevator" ''xdg-open roblox://placeId=4972273297'')
 		libxkbcommon
 		ffmpeg
 		gnupg
@@ -65,6 +66,7 @@
 		fontforge
 		xclip
 		gamescope
+		yt-dlp
 		fontforge-gtk
 		deno
 		wofi

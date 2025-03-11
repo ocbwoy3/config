@@ -7,17 +7,15 @@
 		options nvidia_drm modeset=1 fbdev=1
 	'';
 
-	environment.variables = {
-		LIBVA_DRIVER_NAME = "nvidia";
-		GBM_BACKEND = "nvidia-drm";
-		__GLX_VENDOR_LIBRARY_NAME = "nvidia";
-		NVD_BACKEND = "direct";
-		EGL_PLATFORM = "wayland";
-		VDPAU_DRIVER = "va_gl";
-		WAYLAND_DISPLAY = "wayland-1";
-		DISPLAY = ":0";
-		XDG_CURRENT_DESKTOP = "Hyprland";
-	};
+	environment.variables.LIBVA_DRIVER_NAME = "nvidia";
+	environment.variables.GBM_BACKEND = "nvidia-drm";
+	environment.variables.__GLX_VENDOR_LIBRARY_NAME = "nvidia";
+	environment.variables.NVD_BACKEND = "direct";
+	environment.variables.EGL_PLATFORM = "wayland";
+	environment.variables.VDPAU_DRIVER = "va_gl";
+	environment.variables.WAYLAND_DISPLAY = "wayland-1";
+	environment.variables.DISPLAY = ":0";
+	environment.variables.XDG_CURRENT_DESKTOP = "Hyprland";
 
 	environment.sessionVariables = {
 		NIXOS_OZONE_WL = 1;

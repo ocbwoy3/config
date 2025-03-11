@@ -38,7 +38,7 @@
 
 	services.openssh = {
 		enable = true;
-		banner = "What the fuck do you think you're doing here?\n";
+		banner = "please fuck off\n";
 	};
 
 	services.dbus.packages = [ pkgs.gcr ];

@@ -8,14 +8,14 @@
 		hyprland.url = "github:hyprwm/Hyprland";
 		hyprsysteminfo.url = "github:hyprwm/hyprsysteminfo";
 		ghostty.url = "github:ghostty-org/ghostty";
-		
-		hyprpanel.url = "github:jas-singhfsu/hyprpanel";
-		hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
 
 		home-manager = {
 			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+		disko.url = "github:nix-community/disko/latest";
+		disko.inputs.nixpkgs.follows = "nixpkgs";
 	};
 
 	# Required by NixOS:
@@ -31,13 +31,10 @@
 				inherit inputs;
 			};
 			modules = [
-				{
-					nixpkgs.overlays = [inputs.hyprpanel.overlay];
-				}
 				inputs.home-manager.nixosModules.default
 				inputs.catppuccin.nixosModules.catppuccin
 				inputs.nix-flatpak.nixosModules.nix-flatpak
-				/etc/nixos/hardware-configuration.nix
+				./hosts/default/hardware-configuration.nix
 				./hosts/default/configuration.nix
 			];
 		};
