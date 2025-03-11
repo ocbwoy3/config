@@ -37,6 +37,7 @@
 				inputs.disko.nixosModules.disko
 				./hosts/default/hardware-configuration.nix
 				./hosts/default/configuration.nix
+				./hosts/default/disko.nix
 			];
 		};
 	};
