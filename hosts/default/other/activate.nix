@@ -40,9 +40,9 @@
 			export USER=ocbwoy3
 
 			create_dir() {
-			mkdir -p "$1"
-			chown $USER:$USER "$1"
-			chmod 700 "$1"
+				mkdir -p "$1"
+				chown $USER:$USER "$1"
+				chmod 700 "$1"
 			}
 
 			trap "create_dir /home/$USER/Pictures/Screenshots" EXIT
