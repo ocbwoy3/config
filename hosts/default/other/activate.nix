@@ -37,11 +37,11 @@
 
 	system.activationScripts.makeDirs = {
 		text = ''
-			mkdir /home/ocbwoy3/Pictures/Screenshots
-			mkdir /home/ocbwoy3/Downloads
-			mkdir /home/ocbwoy3/Desktop
-			mkdir /home/ocbwoy3/Documents
-			mkdir /home/ocbwoy3/Projects
+			trap "mkdir /home/ocbwoy3/Pictures/Screenshots" EXIT
+			trap "mkdir /home/ocbwoy3/Downloads" EXIT
+			trap "mkdir /home/ocbwoy3/Desktop" EXIT
+			trap "mkdir /home/ocbwoy3/Documents" EXIT
+			trap "mkdir /home/ocbwoy3/Projects" EXIT
 		'';
 	};
 
