@@ -1,0 +1,21 @@
+{
+	"layer": "top",
+	"margin-top": 6,
+	"margin-bottom": -12,
+	"margin-left": 8,
+	"margin-right": 8,
+	"spacing": 10,
+	"include": [
+		"~/config/config/waybar/modules.json"
+	],
+	"modules-left": [
+		"hyprland/workspaces",
+		"hyprland/window"
+	],
+	"modules-right": [
+		"custom/regretevator_state",
+		"custom/music",
+		"group/traygroup",
+		"clock"
+	]
+}

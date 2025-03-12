@@ -1,0 +1,107 @@
+{
+	"group/traygroup": {
+		"orientation": "inherit",
+		"modules": ["tray", "network", "bluetooth", "pulseaudio"]
+	},
+
+	"custom/middle-split": {
+		"format": " "
+	},
+
+	"custom/music": {
+		"return-type": "json",
+		"exec": "bash ~/config/scripts/waybar-music-status.sh",
+		"restart-interval": 1,
+		"on-scroll-up": "playerctl -p cider,OCbwoy3_s_iPhone volume 0.05+",
+		"on-scroll-down": "playerctl -p cider,OCbwoy3_s_iPhone volume 0.05-",
+		"on-click": "playerctl -p cider,OCbwoy3_s_iPhone play-pause",
+		"on-click-right": "playerctl -p cider,OCbwoy3_s_iPhone next",
+		"on-click-middle": "playerctl -p cider,OCbwoy3_s_iPhone previous",
+		"smooth-scrolling-treshold": 40,
+		"max-length": 60
+	},
+
+	"custom/regretevator_state": {
+		"restart-interval": 1,
+		"return-type": "json",
+		"exec": "cat /tmp/.regretevator_state"
+	},
+
+	"hyprland/window": {
+		"rewrite": {
+			"Code - OSS": "Visual Studio Code",
+			"Cider": "Apple Music",
+			"SCPSL": "SCP: Secret Laboratory",
+			"Sober": "Roblox",
+			"roblox_wrapped - (.*)": "$1",
+			"Minecraft: Forge Loading...": "Minecraft",
+			"gemini.google.com_/app": "Gemini",
+			"PORTAL 2 - (OpenGL|Vulkan)": "Portal 2",
+			"HALF-LIFE 2 - (OpenGL|Vulkan)": "Half-Life 2",
+			"(.*) - (.*) - Visual Studio Code": "󰨞  $1      $2",
+			"(.*) (— Mozilla Firefox( Private Browsing)?|— Brave)": "$1"
+		},
+		"separate-outputs": true
+	},
+
+	"hyprland/workspaces": {
+		"on-click": "activate",
+		"active-only": false,
+		"all-outputs": true,
+		"show-special": false,
+		"format": "{}",
+		"format-icons": {
+			"urgent": "",
+			"active": "",
+			"default": ""
+		},
+		"persistent-workspaces": {
+			"*": 1
+		}
+	},
+
+	"tray": {
+		"icon-size": 21,
+		"spacing": 10
+	},
+
+	"clock": {
+		"format": "{:%H:%M}",
+		"tooltip-format": "{:%A %d %B %Y}",
+		"format-alt": "{:%Y-%m-%d}"
+	},
+
+	"pulseaudio": {
+		"format": "{icon}  {volume}%",
+		"format-muted": " 0%",
+		"format-source": " {volume}%",
+		"format-source-muted": "",
+		"format-icons": {
+			"default": ["", "", ""]
+		},
+		"tooltip-format": "{desc}\n{icon} {volume}%",
+		"on-click": "GTK_THEME=catppuccin-mocha-blue-standard+default pavucontrol"
+	},
+
+	"network": {
+		"format": "󰈁",
+		"format-wifi": "",
+		"format-ethernet": "",
+		"format-disconnected": "󰈂",
+		"tooltip-format": " {ifname} via {gwaddri}",
+		"tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+		"tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+		"tooltip-format-disconnected": "󰈂",
+		"max-length": 50,
+		"on-click": "GTK_THEME=catppuccin-mocha-blue-standard+default nm-connection-editor"
+	},
+
+	"bluetooth": {
+		"format": "",
+		"format-disabled": "󰂲",
+		"format-off": "",
+		"interval": 1,
+		"on-click": "GTK_THEME=catppuccin-mocha-blue-standard+default blueman-manager",
+		"format-no-controller": ""
+	}
+}

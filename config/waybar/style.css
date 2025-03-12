@@ -1,0 +1,127 @@
+/* Global */
+
+* {
+	font-family: 'Symbols Nerd Font', 'Geist Sans';
+	border: none;
+	font-size: 15px;
+	min-height: 10px;
+	/* max-height: 10px;*/
+}
+
+window#waybar {
+	background: transparent;
+}
+
+window#waybar {
+	border-radius: 8px;
+	padding: 3px 5px 3px 5px;
+}
+
+#workspaces, #custom-music, #traygroup, #clock, #window, #custom-regretevator_state {
+	border-radius: 8px;
+	padding: 2px 5px 2px 5px;
+	border: 2px solid #89b4fa;
+}
+
+#traygroup, #custom-music, #window, #workspaces, #custom-regretevator_state {
+	background-color: #1e1e2e;
+	padding-left: 5px;
+	padding-right: 5px;
+	color: #b4befe;
+}
+
+#custom-regretevator_state {
+	font-family: 'DotfilesFont', 'Symbols Nerd Font', 'Geist Sans';
+}
+
+#custom-music, #clock, #window {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#clock {
+	background-color: #1e1e2e;
+	color: #b4befe;
+}
+
+#workspaces button {
+	color: #b4befe;
+}
+
+#workspaces button.active {
+	color: #cba6f7;
+	font-weight: bolder;
+}
+
+#tray {
+	padding: 0px 5px 0px 5px;
+	margin: 0px 0px 0px 0px;
+	color: #b4befe;
+	background-color: #1e1e2e;
+}
+
+#tray menu {
+	padding: 5px 5px 5px 5px;
+	margin: 5px 5px 5px 5px;
+	color: #b4befe;
+	background-color: rgba(30, 30, 46, 0.9);
+	border: 1px solid #89b4fa;
+	border-radius: 13px;
+}
+
+#tray menuitem {
+	padding: 2px 2px 2px 2px;
+	margin: 2px 0px 2px 0px;
+	border-radius: 8px;
+	color: #b4befe;
+	background-color: rgba(30, 30, 46, 0);
+	border: 1px solid #89b4fa;
+}
+
+#tray menuitem:hover {
+	color: #89b4fa;
+	background-color: rgba(17, 17, 27, 0.8);
+}
+
+#tray separatormenuitem {
+	background-color: transparent;
+}
+
+
+
+#network, #bluetooth, #pulseaudio {
+	padding: 0px 5px 0px 5px;
+	margin: 0px 0px 0px 0px;
+}
+
+#tray > .passive {
+	-gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+.invisible {
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	background-color: transparent;
+	border: 2px transparent;
+}
+
+tooltip {
+	padding: 5px 5px 5px 5px;
+	margin: 5px 5px 5px 5px;
+	border-radius: 4px;
+	background-color: rgba(30, 30, 46, 0.8);
+	border: 1px solid #89b4fa;
+	color: #cdd6f4;
+	border-radius: 8px;
+}
+
+window#waybar.empty #window {
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	border: 2px transparent;
+	background-color: transparent;
+}

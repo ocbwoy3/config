@@ -76,6 +76,7 @@
 		deno
 		wofi
 		waybar
+		hyprpaper
 		dunst
 		hyprlock
 		swww
