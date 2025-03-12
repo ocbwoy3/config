@@ -40,7 +40,7 @@
 
 			create_dir() {
 				trap "USER=ocbwoy3 mkdir -p \"$1\"" EXIT
-				trap "USER=ocbwoy3 chown ocbwoy3:ocbwoy3 \"$1\" EXIT
+				trap "USER=ocbwoy3 chown ocbwoy3:ocbwoy3 \"$1\"" EXIT
 				trap "USER=ocbwoy3 chmod 700 \"$1\"" EXIT
 			}
 
