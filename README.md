@@ -38,3 +38,11 @@ git clone https://github.com/ocbwoy3/config
 cd config
 sudo nixos-rebuild switch --flake .#default --impure --cores 4
 ```
+
+```bash
+mkdir -p /home/ocbwoy3/Pictures/Screenshots
+mkdir -p /home/ocbwoy3/Downloads
+mkdir -p /home/ocbwoy3/Desktop
+mkdir -p /home/ocbwoy3/Documents
+mkdir -p /home/ocbwoy3/Projects
+```

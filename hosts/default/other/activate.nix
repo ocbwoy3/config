@@ -35,23 +35,6 @@
 		'';
 	};
 
-	system.activationScripts.makeDirs = {
-		text = ''
-
-			create_dir() {
-				trap "USER=ocbwoy3 mkdir -p \"$1\"" EXIT
-				trap "USER=ocbwoy3 chown ocbwoy3:ocbwoy3 \"$1\"" EXIT
-				trap "USER=ocbwoy3 chmod 700 \"$1\"" EXIT
-			}
-
-			create_dir /home/$USER/Pictures/Screenshots
-			create_dir /home/$USER/Downloads
-			create_dir /home/$USER/Desktop
-			create_dir /home/$USER/Documents
-			create_dir /home/$USER/Projects
-		'';
-	};
-
 	system.activationScripts.xdgDesktopPortal = {
 		text = ''
 			echo "${pkgs.xdg-desktop-portal-gtk}/libexec/xdg-desktop-portal-gtk" > /.xdg.sh
