@@ -6,3 +6,6 @@ theme = catppuccin-mocha
 background-opacity = 0.5
 window-padding-x = 16
 window-padding-y = 16
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
