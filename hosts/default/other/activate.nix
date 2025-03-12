@@ -37,19 +37,18 @@
 
 	system.activationScripts.makeDirs = {
 		text = ''
-			export USER=ocbwoy3
 
 			create_dir() {
-				mkdir -p "$1"
-				chown $USER:$USER "$1"
-				chmod 700 "$1"
+				trap "USER=ocbwoy3 mkdir -p \"$1\"" EXIT
+				trap "USER=ocbwoy3 chown ocbwoy3:ocbwoy3 \"$1\" EXIT
+				trap "USER=ocbwoy3 chmod 700 \"$1\"" EXIT
 			}
 
-			trap "create_dir /home/$USER/Pictures/Screenshots" EXIT
-			trap "create_dir /home/$USER/Downloads" EXIT
-			trap "create_dir /home/$USER/Desktop" EXIT
-			trap "create_dir /home/$USER/Documents" EXIT
-			trap "create_dir /home/$USER/Projects" EXIT
+			create_dir /home/$USER/Pictures/Screenshots
+			create_dir /home/$USER/Downloads
+			create_dir /home/$USER/Desktop
+			create_dir /home/$USER/Documents
+			create_dir /home/$USER/Projects
 		'';
 	};
 
