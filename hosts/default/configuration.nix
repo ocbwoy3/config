@@ -251,7 +251,6 @@
 				{ id = "aflpfginfpjhanhkmdpohpggpolfopmb"; } # SkyLink
 				{ id = "agjnjboanicjcpenljmaaigopkgdnihi"; } # PreMiD
 				{ id = "ijcpiojgefnkmcadacmacogglhjdjphj"; } # Shinigami Eyes
-				{ id = "bmoehnfdgafmljnmbidgjhgfaegkfddk"; } # Bluesky for Everyone
 				{ id = "hbkpclpemjeibhioopcebchdmohaieln"; } # BTRoblox
 				{ id = "lnjaiaapbakfhlbjenjkhffcdpoompki"; } # Catppuccin gh file explorer icons
 				{ id = "ejcfepkfckglbgocfkanmcdngdijcgld"; } # ChatGPT
