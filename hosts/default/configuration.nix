@@ -136,8 +136,6 @@
 		hyfetch
 		kitty
 		inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.ghostty
-		(callPackage ./apps/tuxstrap-crontab.nix {})
-		(callPackage ./apps/wl-shimeji.nix {})
 	];
 
 	xdg.terminal-exec.enable = true;
