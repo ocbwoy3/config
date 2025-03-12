@@ -11,6 +11,7 @@
 		../../modules/nixos/main-user.nix
 		../../modules/nixos/network.nix
 		../../modules/nixos/programs.nix
+		../../modules/home-manager/main.nix
 		./packages.nix
 		# ../../modules/home-manager/hyprpanel.nix
 		./other/activate.nix
@@ -130,13 +131,16 @@
 		equibop
 		libsForQt5.kdenlive
 		libsForQt5.qt5ct
-		libsForQt5.lightly
+		catppuccin-qt5ct
+		lightly-qt
 		kdePackages.qt6ct
 		lightly-qt
 		hyfetch
 		kitty
 		inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.ghostty
 	];
+
+	qt.platformTheme = "qt5ct";
 
 	xdg.terminal-exec.enable = true;
     xdg.portal = {
@@ -162,6 +166,7 @@
 	};
 
 	# CHANGE YOUR NAME IN HOME MANAGER!
+	# BETTER YET, DON'T TOUCH THIS. AT ALL.
 
 	main-user.userName = "ocbwoy3";
 	main-user.realName = "OCbwoy3";
@@ -169,16 +174,68 @@
 	programs.dconf.enable = true;
 	services.gvfs.enable = true;
 
-	catppuccin = {
-		enable = true;
-		flavor = "mocha";
-		accent = "blue";
-		# gtk.enable = true;
-	};
-
 	# home-manager.services.mpris-proxy.enable = true;
 
-	home-manager.users.ocbwoy3 = {
+	home-manager.backupFileExtension = "hmbackup";
+
+	home-manager.users.ocbwoy3 = { config, pkgs, ... }: {
+
+		imports = [
+			inputs.catppuccin.homeManagerModules.catppuccin
+		];
+
+		catppuccin = {
+			enable = true;
+			flavor = "mocha";
+			accent = "blue";
+			gtk.enable = true;
+		};
+
+		home.file.".config/fastfetch" = {
+			source = config.lib.file.mkOutOfStoreSymlink "/home/ocbwoy3/config/config/fastfetch";
+			recursive = true;
+		};
+
+		home.file.".config/dunst" = {
+			source = config.lib.file.mkOutOfStoreSymlink "/home/ocbwoy3/config/config/dunst";
+			recursive = true;
+		};
+
+		home.file.".config/gtk-3.0" = {
+			source = config.lib.file.mkOutOfStoreSymlink "/home/ocbwoy3/config/config/gtk-3.0";
+			recursive = true;
+		};
+
+		home.file.".config/hypr" = {
+			source = config.lib.file.mkOutOfStoreSymlink "/home/ocbwoy3/config/config/hypr";
+			recursive = true;
+		};
+
+		home.file.".local/share/themes" = {
+			source = config.lib.file.mkOutOfStoreSymlink "/home/ocbwoy3/config/config/themes";
+			recursive = true;
+		};
+
+		home.file.".themes" = {
+			source = config.lib.file.mkOutOfStoreSymlink "/home/ocbwoy3/config/config/themes";
+			recursive = true;
+		};
+
+		home.file.".local/share/fonts/DotfilesFont.otf" = {
+			source = config.lib.file.mkOutOfStoreSymlink "/home/ocbwoy3/config/config/dotfile_deps/DotfilesFont.otf";
+		};
+
+		home.file.".config/ghostty" = {
+			source = config.lib.file.mkOutOfStoreSymlink "/home/ocbwoy3/config/config/ghostty";
+			recursive = true;
+		};
+
+		home.file.".config/qt5ct" = {
+			source = config.lib.file.mkOutOfStoreSymlink "/home/ocbwoy3/config/config/qt5ct";
+			recursive = true;
+		};
+
+		# xdg.configHome = "/home/ocbwoy3/config/config";
 
 		services.mpris-proxy.enable = true;
 

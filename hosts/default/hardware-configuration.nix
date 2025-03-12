@@ -28,7 +28,7 @@
   fileSystems."/nix" =
     { device = "/dev/disk/by-uuid/5ca305a1-d705-4c99-913c-a2d1c3447282";
       fsType = "btrfs";
-      options = [ "subvol=nix" ];
+      options = [ "subvol=nix" "noatime" ];
     };
 
   fileSystems."/boot" =

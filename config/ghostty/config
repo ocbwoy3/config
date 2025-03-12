@@ -1,0 +1,8 @@
+font-family = GeistMono NF
+font-family-bold = GeistMono NF Bold
+font-family-italic = GeistMono NF
+font-family-bold-italic = GeistMono NF Bold
+theme = catppuccin-mocha
+background-opacity = 0.5
+window-padding-x = 16
+window-padding-y = 16

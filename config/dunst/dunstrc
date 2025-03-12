@@ -1,0 +1,155 @@
+[global]
+	### Display ###
+
+	monitor = 0
+
+	follow = mouse
+
+	width = 300
+	height = (0,300)
+	origin = top-right
+	scale = 0
+	offset = 30x30
+
+	indicate_hidden = yes
+	shrink = no
+	transparency = 30
+	notification_height = 0
+	separator_height = 1
+	padding = 8
+	horizontal_padding = 8
+	text_icon_padding = 0
+
+	frame_width = 1
+	frame_color = "#1e1e2e"
+
+	separator_color = foreground
+
+	sort = yes
+	idle_threshold = 120
+
+	### Progressbar ###
+	progress_bar = true
+	progress_bar_color = "#ff00ff"
+	progress_bar_height = 10
+	progress_bar_frame_width = 1
+	progress_bar_min_width = 150
+	progress_bar_max_width = 300
+	progress_bar_corner_radius = 10
+	icon_corner_radius = 0
+
+	### Text ###
+
+	font = Geist Sans 10
+	line_height = 0
+	markup = full
+
+	format = "<b>%s</b>\n%b"
+	alignment = left
+	vertical_alignment = center
+	show_age_threshold = 60
+	word_wrap = yes
+	ellipsize = end
+	ignore_newline = no
+	stack_duplicates = false
+	hide_duplicate_count = true
+	show_indicators = yes
+
+	### Icons ###
+
+	icon_position = left
+	max_icon_size = 64
+	icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/:/usr/share/icons/breeze/status/64/:/usr/share/icons/breeze/devices/64/
+
+	### Other ###
+
+	sticky_history = yes
+	history_length = 20
+	notification_limit = 20
+
+	### Misc/Advanced ###
+	dmenu = w -p dunst:
+	browser = brave
+	always_run_script = true
+	title = Dunst
+	class = Dunst
+	startup_notification = true
+
+	verbosity = mesg
+	corner_radius = 8
+
+	force_xinerama = false
+
+	mouse_left_click = "do_action, open_url, close_current" 
+	mouse_middle_click = close_all
+	mouse_right_click = close_current
+
+[experimental]
+	per_monitor_dpi = false
+
+[shortcuts]
+	close = ctrl+space
+	close_all = ctrl+shift+space
+	history = ctrl+grave
+	context = ctrl+shift+period
+
+[urgency_low]
+	background = "#1e1e2e"
+	frame_color = "#b4befe"
+	foreground = "#b4befe"
+	timeout = 5
+
+[urgency_normal]
+	background = "#1e1e2e"
+	foreground = "#b4befe"
+	frame_color = "#b4befe"
+	timeout = 7
+
+[urgency_critical]
+	background = "#1e1e2e"
+	foreground = "#f38ba8"
+	frame_color = "#f38ba8"
+	timeout = 10
+
+[hyprland_general]
+	summary = "Hyprland"
+	background = "#1e1e2e"
+	frame_color = "#f9e2af"
+	foreground = "#f9e2af"
+
+[hyprland_welcome]
+	summary = "Welcome to Hyprland!"
+	background = "#1e1e2e"
+	frame_color = "#a6e3a1"
+	foreground = "#a6e3a1"
+	timeout = 10
+
+[dotfiles_general]
+	summary = "OCbwoy3's Dotfiles"
+	background = "#1e1e2e"
+	frame_color = "#fab387"
+	foreground = "#fab387"
+
+[dotfiles_screenshot]
+	summary = "Screenshot"
+	background = "#1e1e2e"
+	frame_color = "#89dceb"
+	foreground = "#89dceb"
+
+[roblox_wrapper_general]
+	summary = "Roblox"
+	background = "#1e1e2e"
+	frame_color = "#f2cdcd"
+	foreground = "#f2cdcd"
+
+[roblox_wrapper_regretevator]
+	summary = "Regretevator"
+	background = "#1e1e2e"
+	frame_color = "#f5c2e7"
+	foreground = "#f5c2e7"
+
+[roblox_wrapper_regretevator_npc_chat]
+	appname = "regretevator-npc-chat"
+	background = "#1e1e2e"
+	frame_color = "#f5c2e7"
+	foreground = "#f5c2e7"

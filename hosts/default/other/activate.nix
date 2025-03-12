@@ -18,17 +18,36 @@
 		'';
 	};
 
-	system.activationScripts.xdgDesktopPortal = {
+	system.activationScripts.grantGlatpakOverrides = {
 		text = ''
-			echo "${pkgs.xdg-desktop-portal-gtk}/libexec/xdg-desktop-portal-gtk" > /.xdg.sh
+			${pkgs.flatpak}/bin/flatpak override --filesystem=$HOME/.themes
+			${pkgs.flatpak}/bin/flatpak override --filesystem=$HOME/.icons
+			USER=ocbwoy3 ${pkgs.flatpak}/bin/flatpak override --user --filesystem=xdg-config/gtk-4.0
+			${pkgs.flatpak}/bin/flatpak override --filesystem=xdg-config/gtk-4.0
+			USER=ocbwoy3 ${pkgs.flatpak}/bin/flatpak override --user --filesystem=xdg-config/gtk-3.0
+			${pkgs.flatpak}/bin/flatpak override --filesystem=xdg-config/gtk-3.0
 		'';
 	};
 
-	# error code 126
-	system.activationScripts.catppuccinGtk = {
+	system.activationScripts.reloadFonts = {
 		text = ''
-			${pkgs.curl}/bin/curl "https://raw.githubusercontent.com/catppuccin/gtk/v1.0.3/install.py" > /tmp/install.py
-			${pkgs.python3}/bin/python3 /tmp/install.py mocha blue
+			trap "${pkgs.fontconfig}/bin/fc-cache" EXIT
+		'';
+	};
+
+	system.activationScripts.makeDirs = {
+		text = ''
+			mkdir /home/ocbwoy3/Pictures/Screenshots
+			mkdir /home/ocbwoy3/Downloads
+			mkdir /home/ocbwoy3/Desktop
+			mkdir /home/ocbwoy3/Documents
+			mkdir /home/ocbwoy3/Projects
+		'';
+	};
+
+	system.activationScripts.xdgDesktopPortal = {
+		text = ''
+			echo "${pkgs.xdg-desktop-portal-gtk}/libexec/xdg-desktop-portal-gtk" > /.xdg.sh
 		'';
 	};
 

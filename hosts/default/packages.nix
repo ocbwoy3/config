@@ -28,6 +28,11 @@
 				"$@"
 		'')
 		(writeShellScriptBin "regretevator" ''xdg-open roblox://placeId=4972273297'')
+		catppuccin-gtk
+		catppuccin
+		catppuccin-qt5ct
+		catppuccin-catwalk
+		catppuccin-whiskers
 		libxkbcommon
 		ffmpeg
 		gnupg
@@ -100,8 +105,6 @@
 		rhythmbox
 		hyprpolkitagent
 
-		catppuccin-cursors.mochaLavender
-
 		# important
 		glib
 		openssl
@@ -111,6 +114,7 @@
 		gimp
 		mpv
 		nixfmt-rfc-style
+
 	];
 
 }
