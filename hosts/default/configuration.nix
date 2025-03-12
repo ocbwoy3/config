@@ -195,7 +195,19 @@
 				{ id = "hfjngafpndganmdggnapblamgbfjhnof"; } # RoSeal
 				{ id = "aflpfginfpjhanhkmdpohpggpolfopmb"; } # SkyLink
 				{ id = "agjnjboanicjcpenljmaaigopkgdnihi"; } # PreMiD
-				{ id = "ijcpiojgefnkmcadacmacogglhjdjphj"; } # Shinigami Eyes		
+				{ id = "ijcpiojgefnkmcadacmacogglhjdjphj"; } # Shinigami Eyes
+				{ id = "bmoehnfdgafmljnmbidgjhgfaegkfddk"; } # Bluesky for Everyone
+				{ id = "hbkpclpemjeibhioopcebchdmohaieln"; } # BTRoblox
+				{ id = "lnjaiaapbakfhlbjenjkhffcdpoompki"; } # Catppuccin gh file explorer icons
+				{ id = "ejcfepkfckglbgocfkanmcdngdijcgld"; } # ChatGPT
+				{ id = "jifpbeccnghkjeaalbbjmodiffmgedin"; } # CRX Viewer
+				{ id = "hplhmahilccgjccaanlagdidofgaanfe"; } # Gamefam Blocker
+				{ id = "adbacgifemdbhdkfppmeilbgppmhaobf"; } # RoPro
+				{ id = "cbghhgpcnddeihccjmnadmkaejncjndb"; } # Vencord
+				{ id = "jinjaccalgkegednnccohejagnlnfdag"; } # Violentmonkey
+				{ id = "lahhiofdgnbcgmemekkmjnpifojdaelb"; } # Vercel
+				{ id = "mnjggcdmjocbbbhaepdhchncahnbgone"; } # Sponsorblock
+				{ id = "pncfbmialoiaghdehhbnbhkkgmjanfhe"; } # uBlacklist	
 			];
 		};
 
