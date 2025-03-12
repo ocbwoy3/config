@@ -41,6 +41,11 @@
 		banner = "please fuck off\n";
 	};
 
+	security.sudo.enable =  true;
+	security.sudo.configFile = ''
+		%wheel ALL=(ALL) ALL
+	'';
+
 	services.dbus.packages = [ pkgs.gcr ];
 
 	services.pcscd.enable = true;
