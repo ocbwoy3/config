@@ -186,7 +186,7 @@
 
 		programs.chromium = {
 			enable = true;
-			package = pkgs.ungoogled-chromium;
+			package = pkgs.brave;
 			extensions = [
 				{ id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # uBlock Origin
 				{ id = "enamippconapkdmgfgjchkhakpfinmaj"; } # DeArrow
