@@ -178,6 +178,12 @@
 
 	home-manager.backupFileExtension = "hmbackup";
 
+	catppuccin = {
+		enable = true;
+		flavor = "mocha";
+		accent = "blue";
+	};
+
 	home-manager.users.ocbwoy3 = { config, pkgs, ... }: {
 
 		imports = [
