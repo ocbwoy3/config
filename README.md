@@ -46,3 +46,11 @@ mkdir -p /home/ocbwoy3/Desktop
 mkdir -p /home/ocbwoy3/Documents
 mkdir -p /home/ocbwoy3/Projects
 ```
+
+To avoid the same mistake of not not having internet, add Cloudflare's DNS servers to `/etc/resolv.conf`. (as root)
+
+```
+nameserver 1.1.1.1
+```
+
+Or you know, use your ISP's unsafe and possibly privacy-invasive pre-defined DNS nameservers with `networking.resolvconf.enable = true;`.

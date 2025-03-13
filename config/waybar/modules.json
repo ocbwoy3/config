@@ -68,7 +68,8 @@
 	"clock": {
 		"format": "{:%H:%M}",
 		"tooltip-format": "{:%A %d %B %Y}",
-		"format-alt": "{:%Y-%m-%d}"
+		"format-alt": "{:%H:%M:%S}",
+		"interval": 1
 	},
 
 	"pulseaudio": {
@@ -86,13 +87,14 @@
 	"pulseaudio#lol": {
 		"format": "{volume}%",
 		"format-muted": "0%",
-		"format-source": " {volume}%",
-		"format-source-muted": " 0%",
+		"format-source": "{volume}%",
+		"format-source-muted": "0%",
 		"format-icons": {
 			"default": ["", "", ""]
 		},
 		"tooltip-format": "{desc}\n{icon} {volume}%",
-		"on-click": "GTK_THEME=catppuccin-mocha-blue-standard+default pavucontrol"
+		"on-click": "GTK_THEME=catppuccin-mocha-blue-standard+default pavucontrol",
+		"class": "pulseaudio-lol"
 	},
 
 	"network": {
