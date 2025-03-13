@@ -1,7 +1,7 @@
 {
 	"group/traygroup": {
 		"orientation": "inherit",
-		"modules": ["tray", "network", "bluetooth", "pulseaudio"]
+		"modules": ["tray", "network", "bluetooth", "pulseaudio", "pulseaudio#lol"]
 	},
 
 	"custom/middle-split": {
@@ -72,10 +72,22 @@
 	},
 
 	"pulseaudio": {
-		"format": "{icon}  {volume}%",
-		"format-muted": " 0%",
-		"format-source": " {volume}%",
+		"format": "{icon}",
+		"format-muted": "",
+		"format-source": "",
 		"format-source-muted": "",
+		"format-icons": {
+			"default": ["", "", ""]
+		},
+		"tooltip-format": "{desc}\n{icon} {volume}%",
+		"on-click": "GTK_THEME=catppuccin-mocha-blue-standard+default pavucontrol"
+	},
+
+	"pulseaudio#lol": {
+		"format": "{volume}%",
+		"format-muted": "0%",
+		"format-source": " {volume}%",
+		"format-source-muted": " 0%",
 		"format-icons": {
 			"default": ["", "", ""]
 		},

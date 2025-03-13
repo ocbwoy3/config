@@ -1,7 +1,7 @@
 /* Global */
 
 * {
-	font-family: 'Symbols Nerd Font', 'Geist Sans';
+	font-family: 'Symbols Nerd Font', 'Geist';
 	border: none;
 	font-size: 15px;
 	min-height: 10px;
@@ -31,7 +31,7 @@ window#waybar {
 }
 
 #custom-regretevator_state {
-	font-family: 'DotfilesFont', 'Symbols Nerd Font', 'Geist Sans';
+	font-family: 'DotfilesFont', 'Symbols Nerd Font', 'Geist';
 }
 
 #custom-music, #clock, #window {
@@ -86,8 +86,6 @@ window#waybar {
 #tray separatormenuitem {
 	background-color: transparent;
 }
-
-
 
 #network, #bluetooth, #pulseaudio {
 	padding: 0px 5px 0px 5px;
