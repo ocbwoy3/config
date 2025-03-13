@@ -7,6 +7,7 @@ const program = new Command("handle-screenshot");
 
 const SCREENSHOT_PATH = `/home/ocbwoy3/Pictures/Screenshots`;
 
+// useless
 async function transformImage(b: Buffer): Promise<Buffer> {
 	const image = sharp(b).ensureAlpha();
 
@@ -33,7 +34,7 @@ async function transformImage(b: Buffer): Promise<Buffer> {
 		right: 16
 	}).ensureAlpha();
 
-	return await maskedImage.png().toBuffer();
+	return await maskedImage.png().toBuffer() as Buffer;
 }
 
 (() => {
@@ -45,13 +46,13 @@ async function transformImage(b: Buffer): Promise<Buffer> {
 			process.exit(0);
 		};
 		const _BUF = await $`grim -t png -l 0 -g ${selection.stdout.toString().trim()} -`.arrayBuffer();
-		const BUF = Buffer.from(_BUF);
+		let BUF = Buffer.from(_BUF) as Buffer;
 
 		const _d = new Date();
 		const FILENAME = `${SCREENSHOT_PATH}/${_d.toISOString()}-${_d.getTime()}.png`
 
-		const cb = await transformImage(BUF);
-		writeFileSync(FILENAME,cb);
+		// BUF = await transformImage(BUF);
+		writeFileSync(FILENAME,BUF);
 		console.log(FILENAME);
 	});
 
@@ -63,14 +64,14 @@ async function transformImage(b: Buffer): Promise<Buffer> {
 		const selection = await $`hyprctl monitors | awk '/Monitor/{monitor=$2} /focused: yes/{print monitor; exit}'`.nothrow().text();
 
 		const _BUF = await $`grim -t png -l 0 -o ${selection.trim()} -`.arrayBuffer();
-		const BUF = Buffer.from(_BUF);
+		let BUF = Buffer.from(_BUF) as Buffer;
 
 		const _d = new Date();
 		const FILENAME = `${SCREENSHOT_PATH}/${_d.toISOString()}-${_d.getTime()}.png`
 
+		// BUF = await transformImage(BUF);
+		writeFileSync(FILENAME,BUF);
 		console.log(FILENAME)
-		const cb = await transformImage(BUF);
-		writeFileSync(FILENAME,cb);
 	});
 
 })();
