@@ -3,6 +3,12 @@ import { Command } from "commander";
 import sharp from "sharp";
 import { writeFileSync } from "fs";
 
+async function getFilename(): Promise<string> {
+	const _d = new Date();
+	const windowClass = await $`hyprctl activewindow -j`.json();
+	return `${windowClass.initialClass || "Hyprland"}-${_d.getTime()}`;
+}
+
 const program = new Command("handle-screenshot");
 
 const SCREENSHOT_PATH = `/home/ocbwoy3/Pictures/Screenshots`;
@@ -48,8 +54,7 @@ async function transformImage(b: Buffer): Promise<Buffer> {
 		const _BUF = await $`grim -t png -l 0 -g ${selection.stdout.toString().trim()} -`.arrayBuffer();
 		let BUF = Buffer.from(_BUF) as Buffer;
 
-		const _d = new Date();
-		const FILENAME = `${SCREENSHOT_PATH}/${_d.toISOString()}-${_d.getTime()}.png`
+		const FILENAME = `${SCREENSHOT_PATH}/${await getFilename()}.png`;
 
 		// BUF = await transformImage(BUF);
 		writeFileSync(FILENAME,BUF);
@@ -66,8 +71,7 @@ async function transformImage(b: Buffer): Promise<Buffer> {
 		const _BUF = await $`grim -t png -l 0 -o ${selection.trim()} -`.arrayBuffer();
 		let BUF = Buffer.from(_BUF) as Buffer;
 
-		const _d = new Date();
-		const FILENAME = `${SCREENSHOT_PATH}/${_d.toISOString()}-${_d.getTime()}.png`
+		const FILENAME = `${SCREENSHOT_PATH}/${await getFilename()}.png`;
 
 		// BUF = await transformImage(BUF);
 		writeFileSync(FILENAME,BUF);
