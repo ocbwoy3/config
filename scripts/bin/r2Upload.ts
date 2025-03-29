@@ -5,6 +5,8 @@ import { readdirSync, readFileSync, statSync } from "fs";
 import { join } from "path";
 
 try {
+	const start = Date.now();
+	$`notify-send -t 1000 "Screenshot" "Uploading.."`.nothrow().catch(a => { });
 	configDotenv({
 		path: `${homedir()}/.ocbwoy3-dotfiles-SECRET-DO-NOT-TOUCH.env`
 	});
@@ -16,10 +18,12 @@ try {
 		endpoint: process.env.S3_ENDPOINT_URL,
 	});
 
+	let urlParams = "";
+
 	const screenshotsDir = join(homedir(), "Pictures", "Screenshots");
 	const files = readdirSync(screenshotsDir);
 
-	const latestFile = files
+	let latestFile = files
 		.map(file => ({
 			file,
 			time: statSync(join(screenshotsDir, file)).mtime.getTime()
@@ -28,13 +32,23 @@ try {
 
 	const filePath = join(screenshotsDir, latestFile);
 
-	const start = Date.now();
+	let [ _, regretevator, floorNum ] = latestFile.match(/\-(regretevator)\-?([0-9]+)?\.png$/) || [];
+
+	if (regretevator === "regretevator") {
+		latestFile = latestFile.replace(`-regretevator${floorNum ? `-${floorNum}` : ""}.png`,".png")
+		if (floorNum) {
+			urlParams = `?floor=${floorNum}`
+		} else {
+			urlParams = `?regretevator`
+		}
+	}
+
 	const file = bucket.file(latestFile)
 	await file.write(readFileSync(filePath), {
 		type: "image/png"
 	})
-	$`echo "https://i.darktru.win/${latestFile}" | wl-copy -n`.nothrow().catch(a => { });
-	$`notify-send "Screenshot" "Uploaded in ${Date.now() - start}ms"`.nothrow().catch(a => { });
+	$`echo "https://i.darktru.win/${encodeURIComponent(latestFile)}${urlParams}" | wl-copy -n`.nothrow().catch(a => { });
+	$`notify-send "Screenshot" "Uploaded in ${Date.now() - start}ms<br/><small>${latestFile}</small>"`.nothrow().catch(a => { });
 } catch (e_) {
 	$`notify-send "Screenshot" "${`${e_}`}"`.nothrow().catch(a => { });
 }

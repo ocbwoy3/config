@@ -1,6 +1,6 @@
 #!/bin/bash
 
-trap "pkill -9 waybar" EXIT
+pkill -9 waybar
 
 hyprctl dispatch exec "GTK_THEME=Adwaita waybar -c ~/config/config/waybar/config -s ~/config/config/waybar/style.css" &
 hyprctl reload
