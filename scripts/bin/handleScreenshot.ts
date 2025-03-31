@@ -7,11 +7,13 @@ import { getRegretevatorState } from "../lib/RegretevatorUtil";
 async function getFilename(): Promise<string> {
 	const _d = new Date();
 	const windowClass = await $`hyprctl activewindow -j`.json();
-	const isRoblox =
-		windowClass.initialClass === "org.vinegarhq.Sober" ? true : false;
+	let ic = windowClass.initialClass || "Hyprland";
+	const isRoblox = windowClass.initialClass === "org.vinegarhq.Sober";
+	if (isRoblox) {ic = "Roblox"; };
 	const regretevatorState = isRoblox ? getRegretevatorState() : null;
+	if (!!regretevatorState) {ic = "Regretevator";};
 	// console.log(isRoblox, regretevatorState)
-	return `${isRoblox ? "Roblox" : (windowClass.initialClass || "Hyprland")}-${_d.getTime()}${
+	return `${ic}-${_d.getTime()}${
 		!regretevatorState
 			? ""
 			: `-regretevator${
@@ -36,8 +38,8 @@ async function transformImage(b: Buffer): Promise<Buffer> {
 
 	const mask = Buffer.from(
 		`<svg width="${width}" height="${height}">
-		  <rect x="0" y="0" width="${width}" height="${height}" rx="16" fill="white"/>
-		</svg>`
+          <rect x="0" y="0" width="${width}" height="${height}" rx="16" fill="white"/>
+        </svg>`
 	);
 
 	const maskedImage = image

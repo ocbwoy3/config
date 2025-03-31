@@ -39,7 +39,7 @@ try {
 		if (floorNum) {
 			urlParams = `?floor=${floorNum}`
 		} else {
-			urlParams = `?regretevator`
+			urlParams = ``
 		}
 	}
 

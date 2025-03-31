@@ -34,7 +34,8 @@
 		catppuccin-catwalk
 		catppuccin-whiskers
 		libxkbcommon
-		ffmpeg
+		nvidia-video-sdk
+		ffmpeg-full
 		gnupg
 		nix-direnv
 		htop

@@ -46,7 +46,10 @@
 		%wheel ALL=(ALL) ALL
 	'';
 
-	services.dbus.packages = [ pkgs.gcr ];
+	services.dbus = {
+		enable = true;
+		packages = [ pkgs.gcr ];
+	};
 
 	services.pcscd.enable = true;
 	programs.gnupg = {
