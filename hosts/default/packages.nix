@@ -30,6 +30,8 @@
 		(writeShellScriptBin "regretevator" ''xdg-open roblox://placeId=4972273297'')
 		(writeShellScriptBin "fix-gtk" ''${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/hyprctl dispatch exec "${pkgs.xdg-desktop-portal-gtk}/libexec/xdg-desktop-portal-gtk -r"'')
 		(callPackage ./apps/wl-shimeji.nix {})
+		(writeShellScriptBin "stop-shimejis" ''${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/hyprctl dispatch exec "shimejictl stop"'')
+		# (writeShellScriptBin "partynoob" ''shimejictl summon PartyNoob'')
 		catppuccin-gtk
 		catppuccin
 		catppuccin-qt5ct
