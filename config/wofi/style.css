@@ -1,0 +1,53 @@
+window {
+	background-color: #1e1e2e;
+	border: 1px solid #89b4fa;
+	border-radius: 12px;
+	padding: 8px;
+}
+
+#entry {
+	background: transparent;
+	color: #c3d0ff;
+	border-radius: 8px;
+	padding: 6px 12px;
+	border: 1px solid transparent;
+}
+
+#entry label {
+	padding-left: 16px;
+}
+
+#entry expander arrow {
+	padding: -16px;
+	margin: -16px;
+	background: transparent;
+	color: transparent;
+}
+
+#entry:selected {
+	border: 1px solid #89b4fa;
+}
+
+#input {
+	margin: 8px;
+	background: #1e1e2e;
+	color: #c3d0ff;
+	border-radius: 8px;
+	padding: 6px 12px;
+	border: 1px solid #89b4fa;
+}
+
+#scroll {
+	background: transparent;
+	margin-bottom: 8px;
+}
+
+#scroll box {
+	margin-left: 8px;
+	margin-right: 8px;
+}
+
+#scroll slider {
+	background: #89b4fa;
+	border-radius: 4px;
+}

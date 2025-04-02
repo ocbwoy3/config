@@ -241,6 +241,12 @@
 			recursive = true;
 		};
 
+		home.file.".config/wofi" = {
+			source = config.lib.file.mkOutOfStoreSymlink "/home/ocbwoy3/config/config/wofi";
+			recursive = true;
+		};
+
+
 		# xdg.configHome = "/home/ocbwoy3/config/config";
 
 		services.mpris-proxy.enable = true;

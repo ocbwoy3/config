@@ -1,0 +1,7 @@
+[wofi]
+prompt=Search
+allow_images=true
+allow_markup=true
+term=ghostty
+dynamic_lines=true
+normal_window=false
