@@ -28,13 +28,14 @@
 				"$@"
 		'')
 		(writeShellScriptBin "regretevator" ''xdg-open roblox://placeId=4972273297'')
+		(writeShellScriptBin "fix-gtk" ''${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/hyprctl dispatch exec "${pkgs.xdg-desktop-portal-gtk}/libexec/xdg-desktop-portal-gtk -r"'')
+		(callPackage ./apps/wl-shimeji.nix {})
 		catppuccin-gtk
 		catppuccin
 		catppuccin-qt5ct
 		catppuccin-catwalk
 		catppuccin-whiskers
 		libxkbcommon
-		nvidia-video-sdk
 		ffmpeg-full
 		gnupg
 		nix-direnv

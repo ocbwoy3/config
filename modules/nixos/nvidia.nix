@@ -35,7 +35,6 @@
 			intel-vaapi-driver
 			libvdpau-va-gl
 			vulkan-validation-layers
-			nvidia-video-sdk
 		];
 	};
 
