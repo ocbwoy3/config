@@ -5,3 +5,4 @@ allow_markup=true
 term=ghostty
 dynamic_lines=true
 normal_window=false
+insensitive=true

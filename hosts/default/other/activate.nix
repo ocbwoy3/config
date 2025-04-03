@@ -14,7 +14,12 @@
 
 	system.activationScripts.installRoblox = {
 		text = ''
-			trap "${pkgs.flatpak}/bin/flatpak install -y https://sober.vinegarhq.org/sober.flatpakref" EXIT
+			# install roblox manually from flathub 😍
+			if [ ! -d "/home/ocbwoy3/.var/app/org.vinegarhq.Sober" ]; then
+				echo "Please Install Roblox - https://flathub.org/apps/org.vinegarhq.Sober"
+				echo "$ flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
+				echo "$ flatpak install --user flathub org.vinegarhq.Sober"
+			fi
 		'';
 	};
 
