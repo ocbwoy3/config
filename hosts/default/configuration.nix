@@ -71,13 +71,6 @@
 		0.0.0.0 platform.x.com
 		0.0.0.0 api.x.com
 		0.0.0.0 x.com
-		
-		# Block Essential Mod (shady practices)
-		0.0.0.0 api.essential.gg
-		0.0.0.0 connect.essential.gg
-		0.0.0.0 *.essential.gg
-		0.0.0.0 *.modcore.dev
-		0.0.0.0 *.sparkuniverse.com
 	'';
 
 	powerManagement.enable = true;
