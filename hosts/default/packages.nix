@@ -101,7 +101,6 @@
 		blueman
 		arrpc
 		playerctl
-		obs-studio
 		mangohud
 		jq
 		github-cli
@@ -119,7 +118,8 @@
 		gimp
 		mpv
 		nixfmt-rfc-style
-
+		cudaPackages.cudatoolkit
+		cudaPackages.cudnn
 	];
 
 }

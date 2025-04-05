@@ -8,6 +8,7 @@
 		hyprland.url = "github:hyprwm/Hyprland";
 		hyprsysteminfo.url = "github:hyprwm/hyprsysteminfo";
 		ghostty.url = "github:ghostty-org/ghostty";
+		nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
 		home-manager = {
 			url = "github:nix-community/home-manager";
@@ -28,6 +29,7 @@
 				inherit inputs;
 			};
 			modules = [
+				inputs.nixos-hardware.nixosModules.common-gpu-nvidia
 				inputs.home-manager.nixosModules.default
 				inputs.catppuccin.nixosModules.catppuccin
 				inputs.nix-flatpak.nixosModules.nix-flatpak
