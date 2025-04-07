@@ -28,6 +28,7 @@
 				"$@"
 		'')
 		(writeShellScriptBin "regretevator" ''xdg-open roblox://placeId=4972273297'')
+		
 		(writeShellScriptBin "fix-gtk" ''${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/hyprctl dispatch exec "${pkgs.xdg-desktop-portal-gtk}/libexec/xdg-desktop-portal-gtk -r"'')
 		(callPackage ./apps/wl-shimeji.nix {})
 		(writeShellScriptBin "stop-shimejis" ''${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/hyprctl dispatch exec "shimejictl stop"'')
@@ -118,8 +119,10 @@
 		gimp
 		mpv
 		nixfmt-rfc-style
-		cudaPackages.cudatoolkit
-		cudaPackages.cudnn
+
+		protonvpn-cli
+		protonvpn-gui
+		(writeShellScriptBin "protonvpn" ''${pkgs.protonvpn-cli}/bin/protonvpn-cli "$@"'')
 	];
 
 }
