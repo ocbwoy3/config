@@ -114,6 +114,13 @@
 	foreground = "#a6e3a1"
 	timeout = 10
 
+[hyprland_welcome_dots]
+	summary = "Welcome to... your PC?"
+	background = "#1e1e2e"
+	frame_color = "#a6e3a1"
+	foreground = "#a6e3a1"
+	timeout = 10
+
 [dotfiles_general]
 	summary = "OCbwoy3's Dotfiles"
 	background = "#1e1e2e"

@@ -25,7 +25,7 @@ get_source_info() {
 	elif [[ "$trackid" == *"chromium"* ]]; then
 		echo -e "Chrome "
 	elif [[ "$trackid" == *"cider"* ]]; then
-		echo -e "Apple Music " # added
+		echo -e "Apple Music " # added
 	else
 		echo ""
 	fi
@@ -50,7 +50,7 @@ case "$1" in
 			url=${url#file://}
 		elif [[ "$url" == http* ]]; then
 			url="${url/640x640/1024x1024}"
-			hash=$(echo -n "$url" | sha256sum | awk '{print $1}')
+			hash=$(echo -n "$(playerctl metadata album)" | sha256sum | awk '{print $1}')
 			file_path="/tmp/${hash}.jpg"
 			if [[ ! -f "$file_path" ]]; then
 				curl -s --compressed --connect-timeout 2 -m 5 -o "$file_path" "$url" &

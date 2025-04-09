@@ -123,6 +123,9 @@
 		protonvpn-cli
 		protonvpn-gui
 		(writeShellScriptBin "protonvpn" ''${pkgs.protonvpn-cli}/bin/protonvpn-cli "$@"'')
+
+		(writeShellScriptBin "roblox-studio-patcher" ''${pkgs.bun}/bin/bun run /home/ocbwoy3/config/scripts/bin/patchInternalRobloxStudio.ts'')
+
 	];
 
 }

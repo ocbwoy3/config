@@ -9,3 +9,5 @@ window-padding-y = 16
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
+gtk-single-instance = true
+
