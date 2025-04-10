@@ -1,3 +1,4 @@
 # hardware-configuration.nix
 node_modules
 .hyprfail.conf
+DotfilesFont.afm

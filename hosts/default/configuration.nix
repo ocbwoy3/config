@@ -141,10 +141,18 @@
 		extraPortals = [
 			pkgs.xdg-desktop-portal-gnome
 			pkgs.xdg-desktop-portal-gtk
+			inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland
 		];
 	};
-	environment.variables.XDG_TERMINAL = "${inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.ghostty}/bin/ghostty";
-    environment.variables.XDG_SYSTEM_MONITOR = "${pkgs.htop}/bin/htop";
+
+	# environment.variables.XDG_TERMINAL = "${inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.ghostty}/bin/ghostty";
+    # environment.variables.XDG_SYSTEM_MONITOR = "${pkgs.htop}/bin/htop";
+	
+	environment.variables.XDG_TERMINAL = "ghostty";
+	environment.variables.XDG_SYSTEM_MONITOR = "htop";
+
+	environment.variables.GTK_USE_PORTAL = "1";
+	environment.sessionVariables.GTK_USE_PORTAL = 1;
 
 	fileSystems = {
 		"/".options = [ "compress=zstd" ];

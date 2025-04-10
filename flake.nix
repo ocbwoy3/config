@@ -33,7 +33,11 @@
 				inputs.home-manager.nixosModules.default
 				inputs.catppuccin.nixosModules.catppuccin
 				inputs.nix-flatpak.nixosModules.nix-flatpak
-				./hosts/default/hardware-configuration.nix
+				# ./hosts/default/hardware-configuration.nix
+				
+				# lil hack to not use --impure when rebuilding nixos >:3
+				"/etc/nixos/hardware-configuration.nix"
+				
 				./hosts/default/configuration.nix
 			];
 		};

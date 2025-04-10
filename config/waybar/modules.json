@@ -29,17 +29,16 @@
 
 	"hyprland/window": {
 		"rewrite": {
-			"Code - OSS": "Visual Studio Code",
 			"Cider": "Apple Music",
 			"SCPSL": "SCP: Secret Laboratory",
 			"Sober": "Roblox",
-			"roblox_wrapped - (.*)": "$1",
+			"vinegar": "Vinegar",
+			"RobloxStudio": "Roblox Studio",
 			"Minecraft: Forge Loading...": "Minecraft",
 			"gemini.google.com_/app": "Gemini",
 			"PORTAL 2 - (OpenGL|Vulkan)": "Portal 2",
 			"HALF-LIFE 2 - (OpenGL|Vulkan)": "Half-Life 2",
-			"(.*) - (.*) - Visual Studio Code": "󰨞  $1      $2",
-			"(.*) (— Mozilla Firefox( Private Browsing)?|— Brave)": "$1"
+			"(.*) (— Mozilla Firefox( Private Browsing)?|(—|-) Brave)": "$1"
 		},
 		"separate-outputs": true
 	},
