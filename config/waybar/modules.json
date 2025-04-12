@@ -29,6 +29,10 @@
 
 	"hyprland/window": {
 		"rewrite": {
+			"swappy": "Swappy",
+			"Support Hyprland": "Hyprland",
+			"MainPicker": "Hyprland",
+			"Hyprland Updated": "Hyprland",
 			"Cider": "Apple Music",
 			"SCPSL": "SCP: Secret Laboratory",
 			"Sober": "Roblox",
