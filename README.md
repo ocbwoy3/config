@@ -1,19 +1,15 @@
-# OCbwoy3's Dotfiles
+btw i use nix :3
 
-**Prerequisites:**
+1. install base nixos using the commandline
 
-- NixOS
-- Knowledge of the terminal
-
-# How to install
-
-step 1. install base nixos using the commandline (without ui and bloat) with this disk config (assuming it's /dev/sda)
+- without ui and bloat
+- with this disk config
 
 ```
 /dev/sda1 - 1G fat32 fmask=0022 dmask=0022 vfat
             mounts to /boot
 
-# optionally add compress=zstd (which i forgot to do)
+# add compress=zstd
 
 /dev/sdb2 - 100% btrfs
             subvol root -> /
@@ -22,22 +18,24 @@ step 1. install base nixos using the commandline (without ui and bloat) with thi
    subvol root -> /root
 ```
 
-step 2. create user named 'ocbwoy3'
+2. create user named 'ocbwoy3'
 
-step 3. 
+3. run this
 
 ```bash
 cd ~
 nix-shell -p git
 ```
 
-once you're in the shell
+4. run this inside nix shell
 
 ```bash
 git clone https://github.com/ocbwoy3/config
 cd config
 sudo nixos-rebuild switch --flake .#default --impure --cores 4
 ```
+
+5. reboot and run this
 
 ```bash
 mkdir -p /home/ocbwoy3/Pictures/Screenshots
@@ -47,10 +45,16 @@ mkdir -p /home/ocbwoy3/Documents
 mkdir -p /home/ocbwoy3/Projects
 ```
 
-To avoid the same mistake of not not having internet, add Cloudflare's DNS servers to `/etc/resolv.conf`. (as root)
+6. add to `/etc/resolv.conf` as root
 
 ```
 nameserver 1.1.1.1
 ```
 
-Or you know, use your ISP's unsafe and possibly privacy-invasive pre-defined DNS nameservers with `networking.resolvconf.enable = true;`.
+7. disable `networking.resolvconf.enable = true;` to prevent isp spying
+
+8. install roblox
+   
+9. copy asset overlay content folder to `~/.var/app/org.vinegarhq.Sober/data/sober/asset_overlay`
+
+10. done
