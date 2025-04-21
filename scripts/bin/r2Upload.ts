@@ -50,6 +50,11 @@ try {
 	$`echo "https://i.darktru.win/${encodeURIComponent(latestFile)}${urlParams}" | wl-copy -n`.nothrow().catch(a => { });
 	$`notify-send "Screenshot" "Uploaded in ${Date.now() - start}ms<br/><small>${latestFile}</small>"`.nothrow().catch(a => { });
 } catch (e_) {
+	const cx = `${e_}`.toLowerCase();
+	if (cx.includes("enable r2") && cx.includes("cloudflare dashboard")) {
+		$`notify-send "Cloudflare" "bro u mf didnt pay for r2 >:(<br/><small>${`${e_}`}</small>"`.nothrow().catch(a => { });
+		process.exit(0);
+	}
 	$`notify-send "Screenshot" "${`${e_}`}"`.nothrow().catch(a => { });
 }
 
