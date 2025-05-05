@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, ... }:
+{ config, inputs, pkgs, lib, ... }:
 
 {
 
@@ -172,6 +172,13 @@
 	main-user.userName = "ocbwoy3";
 	main-user.realName = "OCbwoy3";
 
+	services.fstrim.enable = true;
+	systemd.services.fstrim.enable = false;
+
+	systemd.services."NetworkManager-wait-online".enable = false;
+
+	systemd.services.docker.wantedBy = lib.mkForce [ ];
+
 	programs.dconf.enable = true;
 	services.gvfs.enable = true;
 
@@ -215,6 +222,11 @@
 
 		home.file.".config/hypr" = {
 			source = config.lib.file.mkOutOfStoreSymlink "/home/ocbwoy3/config/config/hypr";
+			recursive = true;
+		};
+
+		home.file.".config/xdg-desktop-portal" = {
+			source = config.lib.file.mkOutOfStoreSymlink "/home/ocbwoy3/config/config/xdg-desktop-portal";
 			recursive = true;
 		};
 

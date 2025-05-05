@@ -13,7 +13,7 @@
 		"hyprland/window"
 	],
 	"modules-right": [
-		"custom/regretevator_state",
+		// "custom/regretevator_state",
 		"custom/music",
 		"group/traygroup",
 		"clock"
