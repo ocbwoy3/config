@@ -15,7 +15,7 @@ window#waybar {
 	padding: 3px 5px 3px 5px;
 }
 
-#workspaces, #custom-music, #traygroup, #clock, #window, #custom-regretevator_state {
+#workspaces, #mpris, #traygroup, #clock, #window, #custom-regretevator_state {
 	border-radius: 8px;
 	padding: 2px 5px 2px 5px;
 	border: 2px solid #89b4fa;
@@ -25,7 +25,7 @@ window#waybar {
 	font-family: "Geist Mono";
 }
 
-#traygroup, #custom-music, #window, #workspaces, #custom-regretevator_state {
+#traygroup, #mpris, #window, #workspaces, #custom-regretevator_state {
 	background-color: #1e1e2e;
 	padding-left: 5px;
 	padding-right: 5px;
@@ -36,7 +36,7 @@ window#waybar {
 	font-family: 'DotfilesFont', 'Symbols Nerd Font', 'Geist';
 }
 
-#custom-music, #clock, #window {
+#mpris, #clock, #window {
 	padding-left: 10px;
 	padding-right: 10px;
 }
@@ -106,7 +106,7 @@ window#waybar {
     -gtk-icon-effect: highlight;
 }
 
-.invisible {
+.invisible, #mpris.stopped {
 	padding: 0px 0px 0px 0px;
 	margin: 0px 0px 0px 0px;
 	background-color: transparent;

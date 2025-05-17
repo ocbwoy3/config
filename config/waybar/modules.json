@@ -8,15 +8,18 @@
 		"format": " "
 	},
 
-	"custom/music": {
-		"return-type": "json",
-		"exec": "bash ~/config/scripts/waybar-music-status.sh",
-		"restart-interval": 1,
+	"mpris": {
+		"player": "cider",
+		"interval": 1,
 		"on-scroll-up": "playerctl -p cider,OCbwoy3_s_iPhone volume 0.05+",
 		"on-scroll-down": "playerctl -p cider,OCbwoy3_s_iPhone volume 0.05-",
 		"on-click": "playerctl -p cider,OCbwoy3_s_iPhone play-pause",
 		"on-click-right": "playerctl -p cider,OCbwoy3_s_iPhone next",
 		"on-click-middle": "playerctl -p cider,OCbwoy3_s_iPhone previous",
+		"format": "  {artist} — {title}",
+		"tooltip-format": "{album}",
+		"tooltip-format-stopped": "",
+		"format-stopped": "",
 		"smooth-scrolling-treshold": 40,
 		"max-length": 60
 	},
@@ -28,7 +31,10 @@
 	},
 
 	"hyprland/window": {
+		"format": "{}",
 		"rewrite": {
+			"(.*) (- Roblox )?(— Mozilla Firefox( Private Browsing)?|(—|-) Brave)": "$1",
+			"(.*) - Roblox": "$1",
 			"swappy": "Swappy",
 			"Support Hyprland": "Hyprland",
 			"MainPicker": "Hyprland",
@@ -41,10 +47,9 @@
 			"Minecraft: Forge Loading...": "Minecraft",
 			"gemini.google.com_/app": "Gemini",
 			"PORTAL 2 - (OpenGL|Vulkan)": "Portal 2",
-			"HALF-LIFE 2 - (OpenGL|Vulkan)": "Half-Life 2",
-			"(.*) (— Mozilla Firefox( Private Browsing)?|(—|-) Brave)": "$1"
+			"HALF-LIFE 2 - (OpenGL|Vulkan)": "Half-Life 2"
 		},
-		"separate-outputs": true
+		"separate-outputs": false
 	},
 
 	"hyprland/workspaces": {
@@ -69,8 +74,10 @@
 	},
 
 	"clock": {
+		"timezone": "Europe/Riga",
+		"locale": "lv_LV.UTF-8",
 		"format": "{:%H:%M}",
-		"tooltip-format": "{:%A %d %B %Y}",
+		"tooltip-format": "{:L%Y. gada %e. %B}",
 		"format-alt": "{:%H:%M:%S}",
 		"interval": 1
 	},

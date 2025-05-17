@@ -14,7 +14,7 @@
 	],
 	"modules-right": [
 		// "custom/regretevator_state",
-		"custom/music",
+		"mpris",
 		"group/traygroup",
 		"clock"
 	]

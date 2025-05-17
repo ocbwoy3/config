@@ -2,3 +2,4 @@
 node_modules
 .hyprfail.conf
 DotfilesFont.afm
+private_assets

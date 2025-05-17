@@ -13,9 +13,9 @@
 
 	boot.supportedFilesystems = [ "ntfs" ];
 
-	boot.plymouth = {
-		enable = true;
-	};
+	# boot.plymouth = {
+	# 	enable = true;
+	# };
 
 	boot.initrd.verbose = true;
 	boot.kernelParams = [
