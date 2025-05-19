@@ -47,7 +47,9 @@
 			"Minecraft: Forge Loading...": "Minecraft",
 			"gemini.google.com_/app": "Gemini",
 			"PORTAL 2 - (OpenGL|Vulkan)": "Portal 2",
-			"HALF-LIFE 2 - (OpenGL|Vulkan)": "Half-Life 2"
+			"HALF-LIFE 2 - (OpenGL|Vulkan)": "Half-Life 2",
+			"(.*) — Firefox( Developer Edition)?": "$1",
+			"(.*) - Google( Search| meklēšana)?": "$1"
 		},
 		"separate-outputs": false
 	},

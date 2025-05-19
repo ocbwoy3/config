@@ -12,6 +12,7 @@
 		nerd-fonts.geist-mono
 		nerd-fonts.monaspace
 		nerd-fonts.symbols-only
+		minecraftia
 	];
 
 	programs.seahorse.enable = true;
