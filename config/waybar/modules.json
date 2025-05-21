@@ -44,12 +44,13 @@
 			"Sober": "Roblox",
 			"vinegar": "Vinegar",
 			"RobloxStudio": "Roblox Studio",
-			"Minecraft: Forge Loading...": "Minecraft",
+			// "Minecraft NeoForge%*? 1%.2[0-9](%.[0-9]+)?": "Minecraft",
 			"gemini.google.com_/app": "Gemini",
 			"PORTAL 2 - (OpenGL|Vulkan)": "Portal 2",
 			"HALF-LIFE 2 - (OpenGL|Vulkan)": "Half-Life 2",
 			"(.*) — Firefox( Developer Edition)?": "$1",
-			"(.*) - Google( Search| meklēšana)?": "$1"
+			"(.*) - Google( Search| meklēšana)?": "$1",
+			"Minecraft NeoForge%*(.+)": "Minecraft"
 		},
 		"separate-outputs": false
 	},

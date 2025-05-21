@@ -2,21 +2,26 @@
 
 {
 
-	# system.nixos = {
-	# 	distroName = "OCbwoy3";
-	# 	extraOSReleaseArgs = {
-	# 		HOME_URL="https://ocbwoy3.dev/";
-	# 		VERSION_CODENAME="";
-	# 		NAME="OCbwoy3";
-	# 		PRETTY_NAME="OCbwoy3";
-	# 	};
-	# };
+	environment.systemPackages = [
+		(pkgs.callPackage ./../packages/ocbwoy3-icons/default.nix {})
+	];
+
+	system.nixos = {
+		extraOSReleaseArgs = {
+			LOGO="ocbwoy3-system";
+		};
+	};
+
+	system.name = "ocbwoy3";
+	system.nixos.label = "ocbwoy3-config-main";
+	boot.loader.grub.configurationName = lib.mkDefault "ocbwoy3/config:main";
 
 	system.activationScripts.installRoblox = {
 		text = ''
 			# install roblox manually from flathub 😍
 			if [ ! -d "/home/ocbwoy3/.var/app/org.vinegarhq.Sober" ]; then
-				echo "Please Install Roblox - https://flathub.org/apps/org.vinegarhq.Sober"
+				echo "Please Install Roblox"
+				# echo "flathub.org/apps/org.vinegarhq.Sober"
 				echo "$ flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
 				echo "$ flatpak install --user flathub org.vinegarhq.Sober"
 			fi
