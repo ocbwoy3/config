@@ -68,7 +68,7 @@
 
 	### Misc/Advanced ###
 	dmenu = w -p dunst:
-	browser = firefox
+	browser = zen
 	always_run_script = true
 	title = Dunst
 	class = Dunst

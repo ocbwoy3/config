@@ -9,6 +9,7 @@
 		hyprsysteminfo.url = "github:hyprwm/hyprsysteminfo";
 		ghostty.url = "github:ghostty-org/ghostty";
 		nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+		zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
 		home-manager = {
 			url = "github:nix-community/home-manager";
