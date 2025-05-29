@@ -1,6 +1,9 @@
 import { promises as fs } from "fs";
 import * as path from "path";
 import * as os from "os";
+import { setConsoleTitle } from "@ocbwoy3/libocbwoy3";
+
+setConsoleTitle("Roblox Studio patcher");
 
 const SIGNATURE = Buffer.from([
 	0x48, 0x81, 0xEC, 0x40, 0x03, 0x00, 0x00, 0x84, 0xD2, 0x74, 0x05, 0xE8

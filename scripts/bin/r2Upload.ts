@@ -3,6 +3,9 @@ import { configDotenv } from "dotenv";
 import { homedir } from "os";
 import { readdirSync, readFileSync, statSync } from "fs";
 import { join } from "path";
+import { setConsoleTitle } from "@ocbwoy3/libocbwoy3";
+
+setConsoleTitle("R2 Uploader");
 
 try {
 	const start = Date.now();
@@ -34,12 +37,12 @@ try {
 
 	let [ _, regretevator, floorNum ] = latestFile.match(/\-(regretevator)\-?([0-9]+)?\.png$/) || [];
 
+	// the devs changed rich presence, what's the point of parsing the filename if tuxstrap doesn't update the state file anymore? 
 	if (regretevator === "regretevator") {
 		latestFile = latestFile.replace(`-regretevator${floorNum ? `-${floorNum}` : ""}.png`,".png")
+		// OR i could keep the filename and have my worker parse the filename
 		if (floorNum) {
 			urlParams = `?floor=${floorNum}`
-		} else {
-			urlParams = ``
 		}
 	}
 
@@ -52,7 +55,7 @@ try {
 } catch (e_) {
 	const cx = `${e_}`.toLowerCase();
 	if (cx.includes("enable r2") && cx.includes("cloudflare dashboard")) {
-		$`notify-send "Cloudflare" "bro u mf didnt pay for r2 >:(<br/><small>${`${e_}`}</small>"`.nothrow().catch(a => { });
+		$`notify-send "Cloudflare" "You owe Cloudflare money!! >:(<br/><small>${`${e_}`}</small>"`.nothrow().catch(a => { });
 		process.exit(0);
 	}
 	$`notify-send "Screenshot" "${`${e_}`}"`.nothrow().catch(a => { });
