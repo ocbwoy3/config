@@ -4,6 +4,50 @@ import sharp from "sharp";
 import { writeFileSync } from "fs";
 import { getRegretevatorState } from "../lib/RegretevatorUtil";
 
+/*
+
+	yeucc i swear to fucking god...
+
+	{"text":"ý 999","tooltip":"Regretevator: Floor streak 999"}
+
+	NOTE: ý turns into the regretevator icon when using DotfilesFont 
+
+	====
+
+	[BloxstrapRPC] {"command":"SetRichPresence","data":{"details":"REGRETEVATOR","smallImage":{"hoverText":"The Axolotl Sun","assetId":14648053922},"state":"","largeImage":{"hoverText":"THE REGRET ELEVATOR"}}}
+
+	IsIngame | details === "REGRETEVATOR"; smallImage?.hoverText === "The Axolotl Sun";
+
+	====
+
+	[BloxstrapRPC] {"command":"SetRichPresence","data":{"state":"Lounging in the lobby","timeStart":0,"timeEnd":0}}
+
+	IsIngame[Lobby] | state === "Lounging in the lobby";
+	
+	====
+
+	[BloxstrapRPC] {"command":"SetRichPresence","data":{"state":"Currently spectating ELEVATOR_CAM"}}
+
+	InGame[Spectating] | state matches regex /$Currently spectating (.*)$/, if so, SpectateName=$1;
+
+	====
+
+	[BloxstrapRPC] {"command":"SetRichPresence","data":{"details":"Going up!","state":"Floor streak 348","timeStart":1749325817,"timeEnd":1749325839}}
+
+	InGame[GoingUp] | details === "Going up!"; state matches regex /^Floor streak ([0-9]+)$/, if so, FloorStreak=$1;
+
+	====
+
+	[BloxstrapRPC] {"command":"SetRichPresence","data":{"details":"At Funny Maze","state":"Floor streak 348","timeStart":0,"timeEnd":0}}
+
+	InGame[AtFloor] | details match regex /^At (.+)$/, if so, FloorName=$1; state matches regex  /^Floor streak ([0-9]+)$/, if so, FloorStreak=$1;
+
+	====
+
+	TODO: Bring back `features/RegretevatorWaybar.ts` to TuxStrap
+
+*/
+
 async function getFilename(): Promise<string> {
 	const _d = new Date();
 	const windowClass = await $`hyprctl activewindow -j`.json();

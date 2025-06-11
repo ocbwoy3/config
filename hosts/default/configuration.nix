@@ -133,6 +133,7 @@
 		inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.ghostty
 	];
 
+	qt.enable = true;
 	qt.platformTheme = "qt5ct";
 
 	xdg.terminal-exec.enable = true;
@@ -193,6 +194,12 @@
 	};
 
 	home-manager.users.ocbwoy3 = { config, pkgs, ... }: {
+
+		programs.neovim = {
+			defaultEditor = true;
+			viAlias = true;
+			vimAlias = true;
+		};
 
 		imports = [
 			inputs.catppuccin.homeModules.catppuccin

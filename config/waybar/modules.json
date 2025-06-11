@@ -9,7 +9,7 @@
 	},
 
 	"mpris": {
-		"player": "cider",
+		"player": ["cider", "OCbwoy3_s_iPhone"],
 		"interval": 1,
 		"on-scroll-up": "playerctl -p cider,OCbwoy3_s_iPhone volume 0.05+",
 		"on-scroll-down": "playerctl -p cider,OCbwoy3_s_iPhone volume 0.05-",
@@ -77,9 +77,9 @@
 
 	"clock": {
 		"timezone": "Europe/Riga",
-		"locale": "lv_LV.UTF-8",
+		"locale": "en_US.UTF-8",
 		"format": "{:%H:%M}",
-		"tooltip-format": "{:L%Y. gada %e. %B}",
+		"tooltip-format": "{:%A, %B %e, %Y}",
 		"format-alt": "{:%H:%M:%S}",
 		"interval": 1
 	},

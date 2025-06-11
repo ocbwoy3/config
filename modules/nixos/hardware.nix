@@ -37,7 +37,7 @@
 		};
 	};
 
-	services.getty.enable = false;
+	# services.getty.enable = false;
 	systemd.services."getty@tty1".enable = false;
 	systemd.services."getty@tty2".enable = false;
 	systemd.services."getty@tty3".enable = false;

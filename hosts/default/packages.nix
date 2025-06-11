@@ -1,7 +1,7 @@
 { inputs, config, pkgs, ... }:
 
 {
-
+	
 	fonts.packages = with pkgs; [
 		noto-fonts
 		noto-fonts-cjk-sans
@@ -34,6 +34,9 @@
 		(callPackage ./apps/wl-shimeji.nix {})
 		(writeShellScriptBin "stop-shimejis" ''${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/hyprctl dispatch exec "shimejictl stop"'')
 		# (writeShellScriptBin "partynoob" ''shimejictl summon PartyNoob'')
+
+		inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
+		kdePackages.qtdeclarative
 		catppuccin-gtk
 		catppuccin
 		catppuccin-qt5ct
@@ -54,7 +57,6 @@
 		imagemagick
 		alacritty
 		libimobiledevice
-		vim
 		direnv
 		nautilus
 		kdePackages.dolphin
