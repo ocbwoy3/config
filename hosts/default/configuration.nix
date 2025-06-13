@@ -15,8 +15,29 @@
 		./packages.nix
 		# ../../modules/home-manager/hyprpanel.nix
 		./other/activate.nix
-		# ./apps/ancs.nix		
+		# ./apps/ancs.nix	
+		inputs.nvf.nixosModules.default	
 	];
+
+	programs.nvf = {
+		enable = true;
+		defaultEditor = true;
+		# withLua = true;
+
+		settings.vim = {
+			viAlias = true;
+			vimAlias = true;
+			statusline.lualine.enable = true;
+			languages = {
+				enableLSP = true;
+				enableTreesitter = true;
+
+				nix.enable = true;
+				ts.enable = true;
+				# qml.enable = true;
+			};
+		};
+	};
 
 	programs.steam = {
 		enable = true;
@@ -193,13 +214,7 @@
 		accent = "blue";
 	};
 
-	home-manager.users.ocbwoy3 = { config, pkgs, ... }: {
-
-		programs.neovim = {
-			defaultEditor = true;
-			viAlias = true;
-			vimAlias = true;
-		};
+	home-manager.users.ocbwoy3 = { programs, config, pkgs, ... }: {
 
 		imports = [
 			inputs.catppuccin.homeModules.catppuccin
