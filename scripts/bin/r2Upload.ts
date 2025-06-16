@@ -55,7 +55,7 @@ try {
 } catch (e_) {
 	const cx = `${e_}`.toLowerCase();
 	if (cx.includes("enable r2") && cx.includes("cloudflare dashboard")) {
-		$`notify-send "Cloudflare" "You owe Cloudflare money!! >:(<br/><small>${`${e_}`}</small>"`.nothrow().catch(a => { });
+		$`notify-send "Screenshot" "YOU OWE CLOUDFLARE MONEY!!!!"`.nothrow().catch(a => { });
 		process.exit(0);
 	}
 	$`notify-send "Screenshot" "${`${e_}`}"`.nothrow().catch(a => { });

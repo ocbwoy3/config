@@ -9,7 +9,7 @@
 	},
 
 	"mpris": {
-		"player": ["cider", "OCbwoy3_s_iPhone"],
+		"player": "cider", // ["cider", "OCbwoy3_s_iPhone"],
 		"interval": 1,
 		"on-scroll-up": "playerctl -p cider,OCbwoy3_s_iPhone volume 0.05+",
 		"on-scroll-down": "playerctl -p cider,OCbwoy3_s_iPhone volume 0.05-",

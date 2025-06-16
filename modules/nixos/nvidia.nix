@@ -30,6 +30,8 @@
 		EGL_PLATFORM = "wayland";
 	};
 
+	# obs moment
+	# nixpkgs.config.cudaSupport = true;
 
 	hardware.graphics = { # hardware.graphics since NixOS 24.11
 		enable = true;

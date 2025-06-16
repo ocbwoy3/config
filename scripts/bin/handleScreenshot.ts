@@ -16,13 +16,13 @@ import { getRegretevatorState } from "../lib/RegretevatorUtil";
 
 	[BloxstrapRPC] {"command":"SetRichPresence","data":{"details":"REGRETEVATOR","smallImage":{"hoverText":"The Axolotl Sun","assetId":14648053922},"state":"","largeImage":{"hoverText":"THE REGRET ELEVATOR"}}}
 
-	IsIngame | details === "REGRETEVATOR"; smallImage?.hoverText === "The Axolotl Sun";
+	InGame | details === "REGRETEVATOR"; smallImage?.hoverText === "The Axolotl Sun";
 
 	====
 
 	[BloxstrapRPC] {"command":"SetRichPresence","data":{"state":"Lounging in the lobby","timeStart":0,"timeEnd":0}}
 
-	IsIngame[Lobby] | state === "Lounging in the lobby";
+	InGame[Lobby] | state === "Lounging in the lobby";
 	
 	====
 
