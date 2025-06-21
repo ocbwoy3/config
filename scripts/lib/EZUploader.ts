@@ -45,5 +45,17 @@ export async function UploadToEZ(content: Buffer): Promise<string> {
 		throw new Error("Malformed response from e-z.gg");
 	}
 
-	return json.url;
+	/*
+	api response
+	{
+		success: true,
+		message: "File Uploaded",
+		imageUrl: "https://oc3.typescript.love/📸/something.png",
+		rawUrl: "https://r2.e-z.host/something/something.png",
+		deletionUrl: "https://api.e-z.host/files/delete?key=something",
+	}
+	
+	*/
+
+	return json.imageUrl;
 }
