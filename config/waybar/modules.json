@@ -115,8 +115,8 @@
 		"format-ethernet": "",
 		"format-disconnected": "󰈂",
 		"tooltip-format": " {ifname} via {gwaddri}",
-		"tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
-		"tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+		"tooltip-format-wifi": "  {ifname} @ {essid}\nIP adrese: {ipaddr}\nSignāls: {signalStrength}%\nFrekvence: {frequency}MHz\n:  {bandwidthUpBits}  {bandwidthDownBits}",
+		"tooltip-format-ethernet": " {ifname}\nIP adrese: {ipaddr}\n  {bandwidthUpBits}  {bandwidthDownBits}",
 		"tooltip-format-disconnected": "󰈂",
 		"max-length": 50,
 		"on-click": "GTK_THEME=catppuccin-mocha-blue-standard+default nm-connection-editor"

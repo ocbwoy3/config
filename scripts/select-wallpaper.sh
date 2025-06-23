@@ -14,8 +14,6 @@ if [ ${#WALLPAPER} -gt 0 ] ; then
 
 	# wal -stn -a 90 -i $HOME/wallpaper/$WALLPAPER
 
-	notify-send -t 2000 -u low "OCbwoy3's Dotfiles" "Setting wallpaper"
-
 	swww img $HOME/Pictures/Wallpapers/$WALLPAPER --transition-fps 300 --transition-duration 2 --transition-type simple --transition-step 3 &
 	# bash ~/dotfiles/scripts/hot-reload.sh
 

@@ -2,7 +2,7 @@
 
 GAMES=$(cat ~/config/scripts/lib/games.txt)
 
-SELECTED=$(echo "$GAMES" | cut -d'%' -f1 | wofi --show dmenu -p "Launch Roblox...")
+SELECTED=$(echo "$GAMES" | cut -d'%' -f1 | wofi --show dmenu -p "Uzspēlē Roblox...")
 
 if [ -n "$SELECTED" ]; then
 	PLACE_ID=$(echo "$GAMES" | grep "^$SELECTED" | sed 's/.*%%% //')

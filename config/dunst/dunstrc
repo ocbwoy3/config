@@ -114,8 +114,8 @@
 	foreground = "#a6e3a1"
 	timeout = 10
 
-[hyprland_welcome_dots]
-	summary = "Welcome to... your PC?"
+[hyprland_welcome_new]
+	summary = "Sveicināti Hyprland!"
 	background = "#1e1e2e"
 	frame_color = "#a6e3a1"
 	foreground = "#a6e3a1"
@@ -127,11 +127,29 @@
 	frame_color = "#fab387"
 	foreground = "#fab387"
 
+[dotfiles_kbd]
+	summary = "Tastatūra"
+	background = "#1e1e2e"
+	frame_color = "#fab387"
+	foreground = "#fab387"
+
+[dotfiles_wallpaper]
+	summary = "Fons"
+	background = "#1e1e2e"
+	frame_color = "#fab387"
+	foreground = "#fab387"
+
 [dotfiles_screenshot]
-	summary = "Screenshot"
+	summary = "Ekrānuzņēmums"
 	background = "#1e1e2e"
 	frame_color = "#89dceb"
 	foreground = "#89dceb"
+
+[dotfiles_error]
+	summary = "Kļūda"
+	background = "#1e1e2e"
+	foreground = "#f38ba8"
+	frame_color = "#f38ba8"
 
 [roblox_wrapper_general]
 	summary = "Roblox"

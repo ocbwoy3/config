@@ -7,5 +7,5 @@ echo "$SS_PATH"
 
 if [[ -n "$SS_PATH" && "$SS_PATH" == /home/ocbwoy3/Pictures/Screenshots/* ]]; then
     wl-copy < "$SS_PATH"
-    notify-send "Screenshot" "Successfully captured selection to clipboard.\n<small>Open swappy with SUPER+ALT+SHIFT+PS.</small>"
+    notify-send "Ekrānuzņēmums" "Attēls nokopēts starpliktuvē!"
 fi

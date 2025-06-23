@@ -30,8 +30,8 @@ try {
 	const url = await UploadToEZ(readFileSync(filePath));
 
 	$`echo "${url}" | wl-copy -n`.nothrow().catch(a => { });
-	$`notify-send "Screenshot" "Uploaded to e-z.host in ${Date.now() - start}ms, URL copied to clipboard"`.nothrow().catch(a => { });
+	$`notify-send "Ekrānuzņēmums" "Augšuplādēts e-z.host ${Date.now() - start}ms"`.nothrow().catch(a => { });
 } catch (e_) {
-	$`notify-send "Screenshot" "${`${e_}`}"`.nothrow().catch(a => { });
+	$`notify-send "Kļūda" "${`${e_}`}"`.nothrow().catch(a => { });
 }
 
