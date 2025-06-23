@@ -4,7 +4,8 @@
 
 	time.timeZone = "Europe/Riga";
 
-	i18n.defaultLocale = "en_US.UTF-8";
+	# en_US.UTF-8
+	i18n.defaultLocale = "lv_LV.UTF-8";
 
 	i18n.extraLocaleSettings = {
 		LC_ADDRESS = "lv_LV.UTF-8";
