@@ -6,3 +6,4 @@ The Foundation %%% xdg-open roblox://placeId=18186775539
 Evade %%% xdg-open roblox://placeId=9872472334
 Nico's Nextbots %%% xdg-open roblox://placeId=10118559731
 Running From The Internet %%% xdg-open roblox://placeId=11195100561
+Kaiju Paradise %%% xdg-open roblox://placeId=6456351776
