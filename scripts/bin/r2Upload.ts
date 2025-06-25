@@ -5,6 +5,7 @@ import { readdirSync, readFileSync, statSync } from "fs";
 import { join } from "path";
 import { setConsoleTitle } from "@ocbwoy3/libocbwoy3";
 import { UploadToEZ } from "../lib/EZUploader";
+import { execSync } from "child_process";
 
 setConsoleTitle("Screenshot Uploader");
 
@@ -29,9 +30,9 @@ try {
 
 	const url = await UploadToEZ(readFileSync(filePath));
 
-	$`echo "${url}" | wl-copy -n`.nothrow().catch(a => { });
-	$`notify-send "Ekrānuzņēmums" "Augšuplādēts e-z.host ${Date.now() - start}ms"`.nothrow().catch(a => { });
+	execSync(`echo "${url}" | wl-copy -n`);
+	execSync(`notify-send "Ekrānuzņēmums" "Augšuplādēts e-z.host ${Date.now() - start}ms"`);
 } catch (e_) {
-	$`notify-send "Kļūda" "${`${e_}`}"`.nothrow().catch(a => { });
+	execSync(`notify-send "Kļūda" "${`${e_}`}"`);
 }
 

@@ -1,6 +1,7 @@
 #!/run/current-system/sw/bin/bun
 
 import { $ } from "bun";
+import { execSync } from "child_process";
 
 const birthday = new Date(2009, 7, 16);
 const age = Math.floor(
@@ -52,10 +53,10 @@ const debug: boolean = false as false | true;
 
 if (debug === true) {
 	splashes.forEach(async (a) => {
-		await $`notify-send "Welcome to Hyprland!" "${a}"`;
+		execSync(`notify-send "Sveicināti Hyprland!" "${a}"`);
 	});
 } else {
 	const randomSplash = chooseRandom(splashes);
 
-	await $`notify-send "Welcome to Hyprland!" "${randomSplash}"`;
+	execSync(`notify-send "Sveicināti Hyprland!" "${randomSplash}"`);
 }
