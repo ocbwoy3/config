@@ -85,7 +85,9 @@
 	virtualisation.spiceUSBRedirection.enable = true;
 
 	networking.extraHosts = ''
-		
+		# dont worry, i still don't like the guy
+		# but i need to community note roblox on how their moderation is still shit
+		# at this point just hire the goober project to take them down for you
 	'';
 
 	powerManagement.enable = true;
