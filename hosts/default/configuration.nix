@@ -85,13 +85,7 @@
 	virtualisation.spiceUSBRedirection.enable = true;
 
 	networking.extraHosts = ''
-		# Block Twitter (self-explanatory)
-		0.0.0.0 platform.twitter.com
-		0.0.0.0 api.twitter.com
-		0.0.0.0 twitter.com
-		0.0.0.0 platform.x.com
-		0.0.0.0 api.x.com
-		0.0.0.0 x.com
+		
 	'';
 
 	powerManagement.enable = true;
