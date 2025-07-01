@@ -19,7 +19,15 @@
 
 	environment.variables.LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
 
+	# surely they should add programs.discord!!
 	environment.systemPackages = with pkgs; [
+		(discord-ptb.override {
+			withMoonlight = true;
+			# enable = true;
+			# version = pkgs.discord-ptb;
+			# disableBreakingUpdates = true;
+		})
+
 		inputs.hyprsysteminfo.packages.${pkgs.stdenv.hostPlatform.system}.hyprsysteminfo
 		# minecraft
 		qemu

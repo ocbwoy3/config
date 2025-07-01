@@ -277,6 +277,11 @@
 			recursive = true;
 		};
 
+		home.file.".config/wlogout" = {
+			source = config.lib.file.mkOutOfStoreSymlink "/home/ocbwoy3/config/config/wlogout";
+			recursive = true;
+		};
+
 		home.file.".config/qt5ct" = {
 			source = config.lib.file.mkOutOfStoreSymlink "/home/ocbwoy3/config/config/qt5ct";
 			recursive = true;

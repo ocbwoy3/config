@@ -1,0 +1,69 @@
+* {
+	background-image: none;
+	box-shadow: none;
+}
+
+window {
+	background-color: rgba(24, 24, 37, 0.9);
+}
+
+button {
+	border-radius: 0;
+	border-color: #89b4fa;
+	text-decoration-color: #89b4fa;
+	color: #89b4fa;
+	background-color: #1e1e2e;
+	border-style: solid;
+	border-width: 1px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 25%;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 8px;
+	border-width: 3px;
+}
+
+button:focus,
+button:active,
+button:hover {
+	background-color: #181825;
+	outline-style: none;
+	border-color: #f38ba8;
+}
+
+#lock {
+	background-image: image(
+		url("/home/ocbwoy3/config/config/wlogout/assets/lock.png")
+	);
+}
+
+#logout {
+	background-image: image(
+		url("/home/ocbwoy3/config/config/wlogout/assets/logout.png")
+	);
+}
+
+#suspend {
+	background-image: image(
+		url("/home/ocbwoy3/config/config/wlogout/assets/suspend.png")
+	);
+}
+
+#hibernate {
+	background-image: image(
+		url("/home/ocbwoy3/config/config/wlogout/assets/hibernate.png")
+	);
+}
+
+#shutdown {
+	background-image: image(
+		url("/home/ocbwoy3/config/config/wlogout/assets/shutdown.png")
+	);
+}
+
+#reboot {
+	background-image: image(
+		url("/home/ocbwoy3/config/config/wlogout/assets/reboot.png")
+	);
+}
