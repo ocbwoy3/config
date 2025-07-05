@@ -134,7 +134,7 @@
 	virtualisation.docker.enable = true;
 
 	main-user.packages = with pkgs; [
-		warp-terminal
+		# warp-terminal
 		prismlauncher
 		# vesktop
 		# legcord
