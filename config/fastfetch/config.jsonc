@@ -4,25 +4,61 @@
 		"source": "/home/ocbwoy3/.config/fastfetch/boykisser.txt"
 	},
 	"modules": [
-		"title",
+		{
+			"type": "title",
+			"keyColor": "blue",
+			"format": "  {user-name-colored}{at-symbol-colored}{host-name-colored} :3"
+		},
+		
 		"separator",
-		"os",
-		"host",
+		
+		{
+			"type": "os",
+			"key": "OS",
+			"format": "{pretty-name}"
+		},		
 		"kernel",
-		"uptime",
 		"packages",
-		"media",
-		"shell",
-		"wm",
-		"terminal",
+		
+		"break",
+		
+		"host",
+		"uptime",
 		"cpu",
 		"gpu",
 		"memory",
-		"swap",
 		"disk",
-		"battery",
-		"locale",
+		
 		"break",
+		
+		{
+			"type": "wm",
+			"key": "WM",
+			"format": "{pretty-name}"
+		},
+		{
+			"type": "shell",
+			"key": "Shell",
+			"format": "{pretty-name}"
+		},
+		"terminal",
+		"locale",
+
+		"break",
+
+		{
+			"type": "media",
+			"key": "Song",
+			"format": "{artist} — {title}"
+		},
+		{
+			"type": "media",
+			"key": "Album",
+			"format": "{album}"
+		},
+
+		"break",
+
 		"colors"
 	]
 }
