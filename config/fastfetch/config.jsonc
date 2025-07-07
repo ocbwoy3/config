@@ -3,6 +3,9 @@
 	"logo": {
 		"source": "/home/ocbwoy3/.config/fastfetch/boykisser.txt"
 	},
+	"display": {
+		"color": "blue"
+	},
 	"modules": [
 		{
 			"type": "title",
@@ -10,7 +13,7 @@
 			"format": "  {user-name-colored}{at-symbol-colored}{host-name-colored} :3"
 		},
 		
-		"separator",
+		"break",
 		
 		{
 			"type": "os",
@@ -24,8 +27,22 @@
 		
 		"host",
 		"uptime",
-		"cpu",
-		"gpu",
+		
+		"break",
+
+		{
+			"type": "cpu",
+			"format": "{cores-logical}x {name} @ {freq-base} {temperature}",
+			"temp": true
+		},
+		{
+			"type": "gpu",
+			"format": "{vendor} {name} [{type}] {temperature}",
+			"temp": true
+		},
+
+		"break",
+
 		"memory",
 		"disk",
 		
@@ -47,6 +64,13 @@
 		"break",
 
 		{
+			"type": "weather",
+			"location": "Latvia"
+		},
+
+		"break",
+
+		{
 			"type": "media",
 			"key": "Song",
 			"format": "{artist} — {title}"
@@ -59,6 +83,9 @@
 
 		"break",
 
-		"colors"
+		{
+			"type": "colors",
+			"symbol": "circle"
+		}
 	]
 }
