@@ -8,7 +8,7 @@
 
 	system.nixos = {
 		extraOSReleaseArgs = {
-			LOGO="ocbwoy3-system";
+			LOGO="boykisser";
 		};
 	};
 

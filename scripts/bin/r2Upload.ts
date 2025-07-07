@@ -31,8 +31,8 @@ try {
 	const url = await UploadToEZ(readFileSync(filePath));
 
 	execSync(`echo "${url}" | wl-copy -n`);
-	execSync(`notify-send "Ekrānuzņēmums" "Augšuplādēts e-z.host ${Date.now() - start}ms"`);
+	execSync(`notify-send "Screenshot" "Uploaded to e-z.host in ${Date.now() - start}ms"`);
 } catch (e_) {
-	execSync(`notify-send "Kļūda" "${`${e_}`}"`);
+	execSync(`notify-send "Error" "${`${e_}`}"`);
 }
 

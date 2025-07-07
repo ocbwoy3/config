@@ -168,3 +168,64 @@
 	background = "#1e1e2e"
 	frame_color = "#f5c2e7"
 	foreground = "#f5c2e7"
+
+[hyprland_general_en]
+    summary = "Hyprland"
+    background = "#1e1e2e"
+    frame_color = "#f9e2af"
+    foreground = "#f9e2af"
+
+[hyprland_welcome_en]
+    summary = "Welcome to Hyprland!"
+    background = "#1e1e2e"
+    frame_color = "#a6e3a1"
+    foreground = "#a6e3a1"
+    timeout = 10
+
+[dotfiles_general_en]
+    summary = "OCbwoy3's Dotfiles"
+    background = "#1e1e2e"
+    frame_color = "#fab387"
+    foreground = "#fab387"
+
+[dotfiles_kbd_en]
+    summary = "Keyboard"
+    background = "#1e1e2e"
+    frame_color = "#fab387"
+    foreground = "#fab387"
+
+[dotfiles_wallpaper_en]
+    summary = "Wallpaper"
+    background = "#1e1e2e"
+    frame_color = "#fab387"
+    foreground = "#fab387"
+
+[dotfiles_screenshot_en]
+    summary = "Screenshot"
+    background = "#1e1e2e"
+    frame_color = "#89dceb"
+    foreground = "#89dceb"
+
+[dotfiles_error_en]
+    summary = "Error"
+    background = "#1e1e2e"
+    foreground = "#f38ba8"
+    frame_color = "#f38ba8"
+
+[roblox_wrapper_general_en]
+    summary = "Roblox"
+    background = "#1e1e2e"
+    frame_color = "#f2cdcd"
+    foreground = "#f2cdcd"
+
+[roblox_wrapper_regretevator_en]
+    summary = "Regretevator"
+    background = "#1e1e2e"
+    frame_color = "#f5c2e7"
+    foreground = "#f5c2e7"
+
+[roblox_wrapper_regretevator_npc_chat_en]
+    appname = "regretevator-npc-chat"
+    background = "#1e1e2e"
+    frame_color = "#f5c2e7"
+    foreground = "#f5c2e7"

@@ -53,10 +53,10 @@ const debug: boolean = false as false | true;
 
 if (debug === true) {
 	splashes.forEach(async (a) => {
-		execSync(`notify-send "Sveicināti Hyprland!" "${a}"`);
+		execSync(`notify-send "Welcome to Hyprland!" "${a}"`);
 	});
 } else {
 	const randomSplash = chooseRandom(splashes);
 
-	execSync(`notify-send "Sveicināti Hyprland!" "${randomSplash}"`);
+	execSync(`notify-send "Welcome to Hyprland!" "${randomSplash}"`);
 }

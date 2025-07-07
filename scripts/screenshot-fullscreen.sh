@@ -7,5 +7,5 @@ echo "$SS_PATH"
 
 if [[ -n "$SS_PATH" && "$SS_PATH" == /home/ocbwoy3/Pictures/Screenshots/* ]]; then
     wl-copy < "$SS_PATH"
-    notify-send "Ekrānuzņēmums" "Attēls nokopēts starpliktuvē!"
+    notify-send "Screenshot" "Fullscreen copied to clipboard!"
 fi
