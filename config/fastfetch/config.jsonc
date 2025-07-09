@@ -61,12 +61,16 @@
 		"terminal",
 		"locale",
 
+		/*
 		"break",
 
 		{
 			"type": "weather",
-			"location": "Latvia"
+			"location": "Latvia",
+			"timeout": 1000,
+			"outputFormat": "%t+-+%C"
 		},
+		*/
 
 		"break",
 
