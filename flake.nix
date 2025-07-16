@@ -5,7 +5,7 @@
 		nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 		catppuccin.url = "github:catppuccin/nix";
 		nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
-		hyprland.url = "github:hyprwm/Hyprland";
+		hyprland.url = "github:hyprwm/Hyprland/?ref=v0.49.0";
 		hyprsysteminfo.url = "github:hyprwm/hyprsysteminfo";
 		ghostty.url = "github:ghostty-org/ghostty";
 		nixos-hardware.url = "github:NixOS/nixos-hardware/master";
