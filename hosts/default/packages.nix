@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, lib, ... }:
 
 {
 	
@@ -17,7 +17,7 @@
 
 	programs.seahorse.enable = true;
 
-	environment.variables.LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+	environment.sessionVariables.LD_LIBRARY_PATH = "${pkgs.gcc15}/lib";
 
 	# surely they should add programs.discord!!
 	environment.systemPackages = with pkgs; [
@@ -28,7 +28,10 @@
 			# disableBreakingUpdates = true;
 		})
 
+		# hyprland stuff
+		inputs.hyprlock.packages.${pkgs.stdenv.hostPlatform.system}.hyprlock
 		inputs.hyprsysteminfo.packages.${pkgs.stdenv.hostPlatform.system}.hyprsysteminfo
+		
 		# minecraft
 		qemu
 		(writeShellScriptBin "qemu-system-x86_64-uefi" ''
@@ -37,13 +40,15 @@
 				"$@"
 		'')
 		(writeShellScriptBin "regretevator" ''xdg-open roblox://placeId=4972273297'')
-		
+		(writeShellScriptBin "kaijuparadise" ''xdg-open roblox://placeId=6456351776'')
+		(writeShellScriptBin "sewh" ''xdg-open roblox://placeId=16991287194'')	
+
 		(writeShellScriptBin "fix-gtk" ''${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/hyprctl dispatch exec "${pkgs.xdg-desktop-portal-gtk}/libexec/xdg-desktop-portal-gtk -r"'')
 		(callPackage ./apps/wl-shimeji.nix {})
 		(writeShellScriptBin "stop-shimejis" ''${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/hyprctl dispatch exec "shimejictl stop"'')
 		# (writeShellScriptBin "partynoob" ''shimejictl summon PartyNoob'')
 
-		inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
+		# inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
 		kdePackages.qtdeclarative
 		catppuccin-gtk
 		catppuccin
@@ -83,7 +88,6 @@
 			pygobject3
 		]))
 		# wrangler
-		thefuck
 		fontforge
 		xclip
 		gamescope
@@ -94,7 +98,6 @@
 		waybar
 		hyprpaper
 		dunst
-		hyprlock
 		swww
 		swappy
 		slurp
@@ -118,7 +121,7 @@
 		github-cli
 		file
 		nwg-look
-		rhythmbox
+		# rhythmbox
 		hyprpolkitagent
 
 		# important
@@ -127,7 +130,7 @@
 		nss
 		glibc # C LIBRARY DO NOT REMOVE VERY IMPORTANT
 		gobject-introspection 
-		gimp
+		gimp3
 		mpv
 		nixfmt-rfc-style
 

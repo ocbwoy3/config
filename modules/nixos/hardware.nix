@@ -38,12 +38,12 @@
 	};
 
 	# services.getty.enable = false;
-	systemd.services."getty@tty1".enable = false;
-	systemd.services."getty@tty2".enable = false;
-	systemd.services."getty@tty3".enable = false;
-	systemd.services."getty@tty4".enable = false;
-	systemd.services."getty@tty5".enable = false;
-	systemd.services."getty@tty6".enable = false;
+	# systemd.services."getty@tty1".enable = false;
+	# systemd.services."getty@tty2".enable = false;
+	# systemd.services."getty@tty3".enable = false;
+	# systemd.services."getty@tty4".enable = false;
+	# systemd.services."getty@tty5".enable = false;
+	# systemd.services."getty@tty6".enable = false;
 
 	system.stateVersion = "24.11";
 

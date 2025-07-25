@@ -2,7 +2,7 @@
 
 {
 
-	# using cloudflare dns instead of apollo.lv (which might be spying)
+	#! Disable default nameservers to prevent ISP espionage
 	networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
 
 	networking.hostName = "ocbwoy3-pc";

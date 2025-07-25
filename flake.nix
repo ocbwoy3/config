@@ -1,11 +1,17 @@
 {
-	description = "OCbwoy3's Dotfiles";
+	description = "I use Nix BTW... I'm Hyprlanding it!!";
+	# I use Nix BTW -> @iUseNixBTW (https://roblox.com/users/1083030325)
+	# totally not a flex btw
 
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 		catppuccin.url = "github:catppuccin/nix";
 		nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
-		hyprland.url = "github:hyprwm/Hyprland/?ref=v0.49.0";
+		hyprland = {
+			url = "github:hyprwm/Hyprland";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+		hyprlock.url = "github:hyprwm/hyprlock";
 		hyprsysteminfo.url = "github:hyprwm/hyprsysteminfo";
 		ghostty.url = "github:ghostty-org/ghostty";
 		nixos-hardware.url = "github:NixOS/nixos-hardware/master";
@@ -13,15 +19,16 @@
 
 		home-manager = {
 			url = "github:nix-community/home-manager";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-
-		quickshell = {
-			url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-			inputs.nixpkgs.follows = "nixpkgs";
+			# inputs.nixpkgs.follows = "nixpkgs";
 		};
 
 		nvf.url = "github:notashelf/nvf";
+
+		# quickshell = {
+		# 	url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+		# 	# inputs.nixpkgs.follows = "nixpkgs";
+		# };
+
 
 	};
 

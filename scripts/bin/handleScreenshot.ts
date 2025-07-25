@@ -1,6 +1,6 @@
 import { $ } from "bun";
 import { Command } from "commander";
-import sharp from "sharp";
+// import sharp from "sharp";
 import { writeFileSync } from "fs";
 import { getRegretevatorState } from "../lib/RegretevatorUtil";
 
@@ -74,6 +74,7 @@ const SCREENSHOT_PATH = `/home/ocbwoy3/Pictures/Screenshots`;
 
 // useless
 async function transformImage(b: Buffer): Promise<Buffer> {
+	/*
 	const image = sharp(b).ensureAlpha();
 
 	const { width, height } = await image.metadata();
@@ -103,6 +104,8 @@ async function transformImage(b: Buffer): Promise<Buffer> {
 		.ensureAlpha();
 
 	return (await maskedImage.png().toBuffer()) as Buffer;
+	*/
+	return b
 }
 
 (() => {

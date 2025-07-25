@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # do NOT use $PATH for this!!
 SS_PATH=$(timeout 30s bun run ~/config/scripts/bin/handleScreenshot.ts selection)

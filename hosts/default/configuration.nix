@@ -111,6 +111,7 @@
 	programs.hyprland = {
 		enable = true;
 		xwayland.enable = true;
+		# package = (pkgs.callPackage ./packages/hyprland/package.nix {});
 		package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 		portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 	};
@@ -122,7 +123,7 @@
 		syntaxHighlighting.enable = true;
 		ohMyZsh = {
 			enable = true;
-			plugins = [ "git" "direnv" "thefuck" ];
+			plugins = [ "git" "direnv" ];
 			theme = "robbyrussell";
 		};
 		shellAliases = {
@@ -135,7 +136,11 @@
 
 	main-user.packages = with pkgs; [
 		# warp-terminal
-		prismlauncher
+		(prismlauncher.override {
+			jdks = [
+				pkgs.jdk21
+			];
+		})
 		# vesktop
 		# legcord
 		equibop
