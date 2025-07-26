@@ -45,7 +45,7 @@
 				inherit inputs;
 			};
 			modules = [
-				inputs.nixos-hardware.nixosModules.common-gpu-nvidia
+				# inputs.nixos-hardware.nixosModules.common-gpu-nvidia
 				inputs.home-manager.nixosModules.default
 				inputs.catppuccin.nixosModules.catppuccin
 				inputs.nix-flatpak.nixosModules.nix-flatpak

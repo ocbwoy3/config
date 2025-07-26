@@ -45,25 +45,19 @@
 	};
 
 	hardware.nvidia = {
-		prime = {
-			intelBusId = "PCI:0:2:0";
-			nvidiaBusId = "PCI:1:0:0";
-			offload.enableOffloadCmd = true;
-		};
 		modesetting.enable = true;
 		powerManagement.enable = false;
 		powerManagement.finegrained = false;
 		open = false;
 		nvidiaSettings = true;
-		package = config.boot.kernelPackages.nvidiaPackages.stable;
+		package = config.boot.kernelPackages.nvidiaPackages.beta;
 	};
 
 	boot.kernelModules = [ "nvidia-uvm" "nvidia-drm" ];
 	boot.blacklistedKernelModules = [ "nouveau" ];
 
-	boot.kernelParams = [ "acpi_osi=Linux" ];
+	boot.kernelParams = [ "nvidia-drm.modeset=1" "nvidia-drm.fbdev=1" ];
 
-	services.xserver.enable = true;
 	services.xserver.videoDrivers = ["nvidia"];
 
 }
