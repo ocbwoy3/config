@@ -144,6 +144,7 @@
 		# vesktop
 		# legcord
 		equibop
+		code-cursor
 		libsForQt5.kdenlive
 		libsForQt5.qt5ct
 		catppuccin-qt5ct
