@@ -1,5 +1,5 @@
 * {
-	font-family: 'Symbols Nerd Font', 'Geist';
+	font-family: 'Symbols Nerd Font', 'SF Pro Display';
 	border: none;
 	font-size: 15px;
 	min-height: 10px;
@@ -22,7 +22,7 @@ window#waybar {
 }
 
 #clock {
-	font-family: "Geist Mono";
+	font-family: "SF Pro Display";
 }
 
 #traygroup, #mpris, #window, #workspaces, #custom-regretevator_state {

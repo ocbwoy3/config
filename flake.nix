@@ -22,6 +22,11 @@
 			# inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		tuxstrap = {
+			url = "github:ocbwoy3/tuxstrap/v2";
+			# inputs.nixpkgs.follows = "nixpkgs";
+		};
+
 		nvf.url = "github:notashelf/nvf";
 
 		# quickshell = {

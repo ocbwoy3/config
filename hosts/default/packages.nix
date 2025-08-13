@@ -32,6 +32,9 @@
 		inputs.hyprlock.packages.${pkgs.stdenv.hostPlatform.system}.hyprlock
 		inputs.hyprsysteminfo.packages.${pkgs.stdenv.hostPlatform.system}.hyprsysteminfo
 		
+		# roblox
+		inputs.tuxstrap.packages.${pkgs.stdenv.hostPlatform.system}.default
+		
 		# minecraft
 		qemu
 		(writeShellScriptBin "qemu-system-x86_64-uefi" ''
@@ -58,6 +61,7 @@
 		libxkbcommon
 		ffmpeg-full
 		gnupg
+		code-cursor
 		nix-direnv
 		htop
 		nixpkgs-fmt

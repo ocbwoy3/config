@@ -39,7 +39,7 @@
 
 	### Text ###
 
-	font = Geist 10
+	font = SF Pro Display 11
 	line_height = 0
 	markup = full
 

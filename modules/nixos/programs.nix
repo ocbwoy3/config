@@ -11,12 +11,14 @@
 	# 	package = pkgs.kdePackages.sddm;
 	# };
 
-	services.displayManager.autoLogin = {
-		enable = true;
-		user = "ocbwoy3";
-	};
+	# services.displayManager.autoLogin = {
+	# 	enable = true;
+	# 	user = "ocbwoy3";
+	# };
 
-	services.displayManager.defaultSession = "hyprland";
+	# services.displayManager.defaultSession = "hyprland";
+
+	services.displayManager.gdm.enable = true;
 
 	programs.zsh.enable = true;
 
@@ -44,6 +46,7 @@
 	security.sudo.enable =  true;
 	security.sudo.configFile = ''
 		%wheel ALL=(ALL) ALL
+		Defaults pwfeedback
 	'';
 
 	services.dbus = {

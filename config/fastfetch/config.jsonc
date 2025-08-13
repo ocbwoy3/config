@@ -21,7 +21,7 @@
 			"format": "{pretty-name}"
 		},		
 		"kernel",
-		"packages",
+		// "packages",
 		
 		"break",
 		
