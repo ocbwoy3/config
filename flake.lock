@@ -1169,16 +1169,16 @@
         "systems": "systems_6"
       },
       "locked": {
-        "lastModified": 1755071109,
-        "narHash": "sha256-8pJ7o9rmCQNZeZNK2TxRt8SzmtiXlSKi1Go6FJ/fvJs=",
+        "lastModified": 1755268726,
+        "narHash": "sha256-d93cUF2agFvHqPYrE9RgaBCB3+wo9HttleUnZzP05H0=",
         "owner": "ocbwoy3",
         "repo": "tuxstrap",
-        "rev": "fdd354cb2034d7cb0a17180f300c0d2612ccaf99",
+        "rev": "9fff8cddbd6fb739db7d45af05ab3039fb349bb1",
         "type": "github"
       },
       "original": {
         "owner": "ocbwoy3",
-        "ref": "v2",
+        "ref": "dev",
         "repo": "tuxstrap",
         "type": "github"
       }

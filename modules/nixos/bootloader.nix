@@ -26,12 +26,12 @@
 
 	boot.loader = {
 		efi = {
-			canTouchEfiVariables = true;
+			# canTouchEfiVariables = true;
 		};
 		grub = {
 			efiSupport = true;
 			device = "nodev";
-			# efiInstallAsRemovable = true;
+			efiInstallAsRemovable = true;
 			useOSProber = true;
 			gfxmodeEfi = "1920x1080";
 		};

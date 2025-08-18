@@ -23,7 +23,7 @@
 		};
 
 		tuxstrap = {
-			url = "github:ocbwoy3/tuxstrap/v2";
+			url = "github:ocbwoy3/tuxstrap/dev";
 			# inputs.nixpkgs.follows = "nixpkgs";
 		};
 
