@@ -15,7 +15,11 @@
 
 	virtualisation.docker.enable = true;
 
-	networking.firewall.allowedTCPPorts = [ 22 ];
+	networking.firewall = {
+		enable = true;
+		allowedTCPPorts = [ 8080 443 25565 ];
+		allowedUDPPorts = [  ];
+	}
 
 	catppuccin = {
 		enable = true;

@@ -70,12 +70,12 @@
 			splix
 			hplip
 		];
-		webInterface = true;
+		webInterface = false;
 		listenAddresses = [ "*:631" ];
-		allowFrom = [ "all" ];
-		browsing = true;
-		defaultShared = true;
-		openFirewall = true;
+		allowFrom = [ "localhost" ];
+		browsing = false;
+		defaultShared = false;
+		openFirewall = false;
 	};
 
 	programs.virt-manager.enable = true;

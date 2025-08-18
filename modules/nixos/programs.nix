@@ -40,7 +40,8 @@
 
 	services.openssh = {
 		enable = true;
-		banner = "please fuck off\n";
+		ports = [ ];
+		banner = "bro fuck off";
 	};
 
 	security.sudo.enable =  true;
