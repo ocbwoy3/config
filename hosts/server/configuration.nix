@@ -15,7 +15,7 @@
 	environment.systemPackages = with pkgs; [
 		fastfetch
 		hyfetch
-	]
+	];
 
 	users.users.ocbwoy3 = {
 		initialPassword = "thisisapassword42069!"; # not the type passwords i use
