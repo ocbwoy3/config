@@ -186,7 +186,6 @@
 			enable = true;
 			flavor = "mocha";
 			accent = "blue";
-			gtk.enable = true;
 		};
 
 		programs.zen-browser = {
