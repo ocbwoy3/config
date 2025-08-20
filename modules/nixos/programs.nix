@@ -32,6 +32,11 @@
 	services.openssh = {
 		enable = true;
 		ports = [ 22 ];
+		settings = {
+			KexAlgorithms = [ "curve25519-sha256@libssh.org" ];
+			Ciphers = [ "chacha20-poly1305@openssh.com" ];
+			Macs = [ "hmac-sha2-512-etm@openssh.com" ];
+		};
 	};
 
 	security.sudo.enable =  true;
