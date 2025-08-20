@@ -67,6 +67,8 @@
 				inherit inputs;
 			};
 			modules = [
+				inputs.catppuccin.nixosModules.catppuccin
+
 				# lil hack to not use --impure when rebuilding nixos >:3
 				"/etc/nixos/hardware-configuration.nix"
 				

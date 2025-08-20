@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
 
@@ -45,6 +45,6 @@
 	# systemd.services."getty@tty5".enable = false;
 	# systemd.services."getty@tty6".enable = false;
 
-	system.stateVersion = "24.11";
+	system.stateVersion = lib.mkDefault "24.11";
 
 }

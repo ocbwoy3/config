@@ -1,11 +1,15 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
 	imports = [
 		./modules/atproto-pds.nix
+		../../modules/nixos/bootloader.nix
+		../../modules/nixos/network.nix
+		../../modules/nixos/hardware.nix
+		../../modules/nixos/nixpkgs.nix
 	];
 
-	services.openssh.enable = true;
+	services.openssh.enable = lib.mkForce true;
 
 	users.users.ocbwoy3 = {
 		initialPassword = "thisisapassword42069!"; # not the type passwords i use
@@ -19,7 +23,7 @@
 		enable = true;
 		allowedTCPPorts = [ 22 443 8080 25565 ];
 		allowedUDPPorts = [  ];
-	}
+	};
 
 	catppuccin = {
 		enable = true;
