@@ -9,6 +9,10 @@
 		../../modules/nixos/nixpkgs.nix
 	];
 
+	environment.systemPackages = with pkgs; [
+		gh
+	];
+
 	services.openssh.enable = lib.mkForce true;
 
 	users.users.ocbwoy3 = {
