@@ -21,7 +21,6 @@
 			PDS_TERMS_OF_SERVICE_URL = "https://ocbwoy3.dev";
 			PDS_ACCEPTING_REPO_IMPORTS = "true";
 		};
-
 	};
 
 }

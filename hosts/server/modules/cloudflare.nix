@@ -9,7 +9,7 @@
 	# lib.mkIf (isOCbwoy3 == true)
 	services.cloudflared = {
 		enable = true;
-		certificateFile = "/private/cloudflared.pem"
+		certificateFile = "/private/cloudflared.pem";
 		tunnels = {
 			"selfhost" = {
 				# 2f83f704-e9f7-49fb-a6c4-d4a8f85d87e4
