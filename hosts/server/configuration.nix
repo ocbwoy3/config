@@ -3,22 +3,25 @@
 {
 	imports = [
 		./modules/atproto-pds.nix
-		../../modules/nixos/bootloader.nix
-		../../modules/nixos/network.nix
-		../../modules/nixos/hardware.nix
-		../../modules/nixos/nixpkgs.nix
+		./modules/cloudflare.nix
+		../../modules/force.nix
 	];
 
-	environment.systemPackages = with pkgs; [
-		gh
-	];
+	# gcc. shit breaks. wtf
+	environment.sessionVariables.LD_LIBRARY_PATH = "${pkgs.gcc15}/lib";
 
 	services.openssh.enable = lib.mkForce true;
+
+	environment.systemPackages = with pkgs; [
+		fastfetch
+		hyfetch
+	]
 
 	users.users.ocbwoy3 = {
 		initialPassword = "thisisapassword42069!"; # not the type passwords i use
 		isNormalUser = true;
 		extraGroups = [ "wheel" "networkmanager" ];
+		shell = pkgs.zsh;
 	};
 
 	virtualisation.docker.enable = true;

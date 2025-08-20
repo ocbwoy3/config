@@ -3,43 +3,16 @@
 {
 
 	imports = [
-		../../modules/nixos/nixpkgs.nix
-		../../modules/nixos/bootloader.nix
-		../../modules/nixos/hardware.nix
-		../../modules/nixos/nvidia.nix
-		../../modules/nixos/i18n.nix
+		../../modules/force.nix
 		../../modules/nixos/main-user.nix
-		../../modules/nixos/network.nix
-		../../modules/nixos/programs.nix
 		../../modules/home-manager/main.nix
 		./packages.nix
 		# ../../modules/home-manager/hyprpanel.nix
 		./other/activate.nix
-		# ./apps/ancs.nix	
-		inputs.nvf.nixosModules.default	
+		# ./apps/ancs.nix
 	];
 
 	services.displayManager.gdm.enable = true;
-
-	programs.nvf = {
-		enable = true;
-		defaultEditor = true;
-		# withLua = true;
-
-		settings.vim = {
-			viAlias = true;
-			vimAlias = true;
-			statusline.lualine.enable = true;
-			languages = {
-				enableLSP = true;
-				enableTreesitter = true;
-
-				nix.enable = true;
-				ts.enable = true;
-				# qml.enable = true;
-			};
-		};
-	};
 
 	programs.steam = {
 		enable = true;
@@ -116,22 +89,6 @@
 		# package = (pkgs.callPackage ./packages/hyprland/package.nix {});
 		package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 		portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-	};
-
-	programs.zsh = {
-		enable = true;
-		autosuggestions.enable = true;
-		zsh-autoenv.enable = true;
-		syntaxHighlighting.enable = true;
-		ohMyZsh = {
-			enable = true;
-			plugins = [ "git" "direnv" ];
-			theme = "robbyrussell";
-		};
-		shellAliases = {
-			nixrebuild = "sudo nixos-rebuild switch --flake .#default --impure --cores 4 -L --upgrade";
-			neofetch = "fastfetch";
-		};
 	};
 
 	virtualisation.docker.enable = true;

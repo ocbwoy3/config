@@ -106,6 +106,7 @@
 		swappy
 		slurp
 		grim
+		wayland-utils
 		wl-clipboard
 		github-cli
 		cliphist

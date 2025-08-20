@@ -18,13 +18,6 @@
 
 	# services.displayManager.defaultSession = "hyprland";
 
-	programs.zsh.enable = true;
-
-	programs.direnv = {
-		enable = true;
-		enableZshIntegration = true;
-	};
-
 	programs.gamemode.enable = true;
 	programs.gamemode.settings.general.renice = 0;
 	programs.gamemode.settings.general.ioprio = 0;
