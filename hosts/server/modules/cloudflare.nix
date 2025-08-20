@@ -17,13 +17,13 @@
 				credentialsFile = "/private/cloudflared/selfhost.json";
 				ingress = {
 					"api.ocbwoy3.dev" = {
-						service = "http://localhost:8080";
+						service = "http://127.0.0.1:8080";
 					};
 					"remx-staging.darktru.win" = {
-						service = "http://localhost:3000";
+						service = "http://127.0.0.1:3000";
 					};
 					"pds.darktru.win" = {
-						service = "http://localhost:80";
+						service = "http://127.0.0.1:80";
 					};
 				};
 			};
