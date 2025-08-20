@@ -18,8 +18,6 @@
 
 	# services.displayManager.defaultSession = "hyprland";
 
-	services.displayManager.gdm.enable = true;
-
 	programs.zsh.enable = true;
 
 	programs.direnv = {
@@ -40,8 +38,7 @@
 
 	services.openssh = {
 		enable = true;
-		ports = [ ];
-		banner = "bro fuck off";
+		ports = [ 22 ];
 	};
 
 	security.sudo.enable =  true;

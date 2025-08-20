@@ -62,6 +62,17 @@
 				./hosts/default/configuration.nix
 			];
 		};
+		nixosConfigurations.server = nixpkgs.lib.nixosSystem {
+			specialArgs = {
+				inherit inputs;
+			};
+			modules = [
+				# lil hack to not use --impure when rebuilding nixos >:3
+				"/etc/nixos/hardware-configuration.nix"
+				
+				./hosts/server/configuration.nix
+			];
+		};
 		nixosConfigurations.fix_nixpkgs = nixpkgs.lib.nixosSystem {
 			specialArgs = {
 				inherit inputs;

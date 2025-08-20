@@ -19,6 +19,8 @@
 		inputs.nvf.nixosModules.default	
 	];
 
+	services.displayManager.gdm.enable = true;
+
 	programs.nvf = {
 		enable = true;
 		defaultEditor = true;
