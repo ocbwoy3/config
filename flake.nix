@@ -29,6 +29,8 @@
 
 		nvf.url = "github:notashelf/nvf";
 
+		tangled.url = "git+https://tangled.sh/@tangled.sh/core";
+
 		# quickshell = {
 		# 	url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
 		# 	# inputs.nixpkgs.follows = "nixpkgs";

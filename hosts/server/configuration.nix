@@ -4,6 +4,7 @@
 	imports = [
 		./modules/atproto-pds.nix
 		./modules/cloudflare.nix
+		./modules/knot.nix
 		../../modules/force.nix
 	];
 
@@ -16,15 +17,20 @@
 		after = [ "network.target" ];
 		wantedBy = [ "multi-user.target" ];
 		serviceConfig = {
-			Type = "oneshot";
-			ExecStart = "${pkgs.pm2}/bin/pm2 ping";
+			Type = "forking";
 			User = "ocbwoy3";
-			Group = "wheel";
+			LimitNOFILE = "infinity";
+			LimitNPROC = "infinity";
+			LimitCORE = "infinity";
+			Environment = "PM2_HOME=/home/ocbwoy3/.pm2";
+			PIDFile = "/home/ocbwoy3/.pm2/pm2.pid";
 			Restart = "on-failure";
-			RestartSec = "5s";
+
+			ExecStart = "${pkgs.pm2}/bin/pm2 resurrect";
+			ExecReload = "${pkgs.pm2}/bin/pm2 reload all";
+			ExecStop = "${pkgs.pm2}/bin/pm2 kill";
 		};
 	};
-
 
 	services.openssh.settings = {
 		PubkeyAuthentication = "yes";
