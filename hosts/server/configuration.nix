@@ -15,6 +15,7 @@
 	environment.systemPackages = with pkgs; [
 		fastfetch
 		hyfetch
+		pm2
 	];
 
 	users.users.ocbwoy3 = {
