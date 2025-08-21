@@ -70,6 +70,7 @@
 			};
 			modules = [
 				inputs.catppuccin.nixosModules.catppuccin
+				inputs.tangled.nixosModules.knot
 
 				# lil hack to not use --impure when rebuilding nixos >:3
 				"/etc/nixos/hardware-configuration.nix"

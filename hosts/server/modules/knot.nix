@@ -1,10 +1,6 @@
 { config, pkgs, lib, ... }:
 
 {
-	imports = [
-		inputs.tangled.nixosModules.knot
-	];
-
 	services.tangled-knot = {
 		enable = true;
 		listenAddr = "0.0.0.0:3003";
