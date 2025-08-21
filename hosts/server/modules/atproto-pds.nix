@@ -13,8 +13,8 @@
 		settings = {
 			PDS_CRAWLERS = "https://bsky.network";
 			LOG_ENABLED = "true";
-			PDS_HOSTNAME = "pds.darktru.win";
-			PDS_VERSION = "i use nix btw";
+			PDS_HOSTNAME = "pds.ocbwoy3.dev";
+			PDS_VERSION = "\"ATProto PDS v69420\"";
 			PDS_DID_PLC_URL = "https://plc.directory";
 			PDS_CONTACT_EMAIL_ADDRESS = "ocbwoy3@ocbwoy3.dev";
 			PDS_PRIVACY_POLICY_URL = "https://ocbwoy3.dev";

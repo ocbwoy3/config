@@ -10,6 +10,27 @@
 	# gcc. shit breaks. wtf
 	environment.sessionVariables.LD_LIBRARY_PATH = "${pkgs.gcc15}/lib";
 
+	systemd.services.ocbwoy3-start-pm2 = {
+		enable = true;
+		description = "Start PM2";
+		after = [ "network.target" ];
+		wantedBy = [ "multi-user.target" ];
+		serviceConfig = {
+			Type = "oneshot";
+			ExecStart = "${pkgs.pm2}/bin/pm2 ping";
+			User = "ocbwoy3";
+			Group = "wheel";
+			Restart = "on-failure";
+			RestartSec = "5s";
+		};
+	};
+
+
+	services.openssh.settings = {
+		PubkeyAuthentication = "yes";
+		TrustedUserCAKeys = "/etc/ssh/ca.pub";
+	};
+
 	services.openssh.enable = lib.mkForce true;
 
 	environment.systemPackages = with pkgs; [
