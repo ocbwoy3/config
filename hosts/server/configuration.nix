@@ -29,8 +29,8 @@
 
 	networking.firewall = {
 		enable = true;
-		allowedTCPPorts = [ 22 443 8080 25565 ];
-		allowedUDPPorts = [  ];
+		allowedTCPPorts = [ 22 443 3000 3001 8080 25565 ];
+		allowedUDPPorts = [ 22 443 3000 3001 8080 25565 ];
 	};
 
 	catppuccin = {
